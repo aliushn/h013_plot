@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Image/power_off.png</file>
+        <file>Image/more.png</file>
+        <file>Image/power_on.png</file>
+        <file>Image/radio_off.png</file>
+        <file>Image/radio_on.png</file>
+        <file>Image/slo.png</file>
+        <file>black.qss</file>
+        <file>Image/bkfac.jpeg</file>
+        <file>Image/BKfir.jpeg</file>
+        <file>Image/BKco.jpeg</file>
+    </qresource>
+</RCC>
