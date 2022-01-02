@@ -48,7 +48,8 @@ SOURCES += \
     qcustomplot.cpp\
     jwserialpro.cpp \
     waterprogressbar.cpp \
-    bmachinecontrol.cpp \
+     bmachinecontrol.cpp \
+    jwMusic/jwmusic.cpp \
     jwmqtt.cpp
 
 
@@ -64,6 +65,7 @@ HEADERS += \
     jwserialthread.h \
     licensehjw.h \
     maintable.h \
+    jwMusic/jwmusic.h \
     mainwindow.h\
     hidapi.h \
     plothjw.h \
@@ -95,3 +97,18 @@ RESOURCES += \
 DEFINES += QT_DEPRECATED_WARNINGS
 
 win32: LIBS += -lSetupAPI -luser32
+
+
+INCLUDEPATH +=C:\K73_QTSerial\HM013-PC-user\HM013-PC\FFTReal-2.11\
+              $$PWD/ffmpeg/ffmpeg-4.0.2-win64-dev/include
+
+
+LIBS += -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lavcodec \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lavdevice \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lavfilter \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lavformat \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lavutil \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lpostproc \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lswresample \
+        -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lswscale \
+

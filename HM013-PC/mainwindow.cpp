@@ -70,7 +70,8 @@ bool MainWindow::CreateSerialPro(void)
 
 
 
-
+#define  PRINTF_STRINg  "diff_data:	"
+#define  STR_SIZE_PARSE  (int)7
 void MainWindow::slot_readByteshjw(QByteArray data)
 {
 	QString info;
@@ -102,6 +103,147 @@ void MainWindow::slot_readByteshjw(QByteArray data)
 
     uint16_t j=0;
     // 根据值判断做逻辑处理，可做成函数
+
+    if(data.contains("jw:rawdata:"))
+    {
+        if((data.contains("arith:")&&(data.contains("diff_data:")&&(data.contains("acc_datax:")&&(data.contains("acc_datay:"))))))
+        {
+            double rawdata=0;
+            double arith_rawdata=0;
+            double energy_data=0;
+            double diff_data=0;
+            ////////////////////////////////////////////////////////
+            double acc_datax=0;
+            double acc_datay=0;
+
+
+            int rawdata_index=(int)(data.indexOf("rawdata",1)+strlen("rawdata")+1);
+            rawdata_index+=(int)STR_SIZE_PARSE;
+            if(data.at(rawdata_index+2)==44){
+                rawdata=(double)((data.at(rawdata_index+1)-0x30));
+            }else if(data.at(rawdata_index+3)==44){
+                rawdata=(double)((data.at(rawdata_index+1)-0x30)*10+(data.at(rawdata_index+2)-0x30));
+            }else if(data.at(rawdata_index+4)==44){
+                rawdata=(double)((data.at(rawdata_index+1)-0x30)*100+(data.at(rawdata_index+2)-0x30)*10+(data.at(rawdata_index+3)-0x30));
+            }else if(data.at(rawdata_index+5)==44){
+                rawdata=(double)((data.at(rawdata_index+1)-0x30)*1000+(data.at(rawdata_index+2)-0x30)*100+(data.at(rawdata_index+3)-0x30)*10+(data.at(rawdata_index+4)-0x30));
+            }
+            ////////////////////////////////////////////////////////////////////////////////////////
+
+            int arith_rawdata_index=(int)(data.indexOf("arith",1)+strlen("arith")+1);
+            arith_rawdata_index+=(int)STR_SIZE_PARSE;
+            if(data.at(arith_rawdata_index+2)==44){
+                arith_rawdata=(double)((data.at(arith_rawdata_index+1)-0x30));
+            }else if(data.at(arith_rawdata_index+3)==44){
+                arith_rawdata=(double)((data.at(arith_rawdata_index+1)-0x30)*10+(data.at(arith_rawdata_index+2)-0x30));
+            }else if(data.at(arith_rawdata_index+4)==44){
+                arith_rawdata=(double)((data.at(arith_rawdata_index+1)-0x30)*100+(data.at(arith_rawdata_index+2)-0x30)*10+(data.at(arith_rawdata_index+3)-0x30));
+            }else if(data.at(arith_rawdata_index+5)==44){
+                arith_rawdata=(double)((data.at(arith_rawdata_index+1)-0x30)*1000+(data.at(arith_rawdata_index+2)-0x30)*100+(data.at(arith_rawdata_index+3)-0x30)*10+(data.at(arith_rawdata_index+4)-0x30));
+            }
+            ////////////////////////////////////////////////////////////////////////////////////////
+
+            int energy_data_index=(int)(data.indexOf("energy_data",1)+strlen("energy_data")+1);
+            energy_data_index+=(int)STR_SIZE_PARSE;
+            if(data.at(energy_data_index+2)==44){
+                energy_data=(double)((data.at(energy_data_index+1)-0x30));
+            }else if(data.at(energy_data_index+3)==44){
+                energy_data=(double)((data.at(energy_data_index+1)-0x30)*10+(data.at(energy_data_index+2)-0x30));
+            }else if(data.at(arith_rawdata_index+4)==44){
+                energy_data=(double)((data.at(energy_data_index+1)-0x30)*100+(data.at(energy_data_index+2)-0x30)*10+(data.at(energy_data_index+3)-0x30));
+            }else if(data.at(energy_data_index+5)==44){
+                energy_data=(double)((data.at(energy_data_index+1)-0x30)*1000+(data.at(energy_data_index+2)-0x30)*100+(data.at(energy_data_index+3)-0x30)*10+(data.at(energy_data_index+4)-0x30));
+            }
+            ////////////////////////////////////////////////////////////////////////////////////////
+
+            int diff_data_index=(int)(data.indexOf("diff_data",1)+strlen("diff_data")+1);
+            diff_data_index+=(int)STR_SIZE_PARSE;
+            if(data.at(diff_data_index+2)==44){
+                diff_data=(double)((data.at(diff_data_index+1)-0x30));
+            }else if(data.at(diff_data_index+3)==44){
+                diff_data=(double)((data.at(diff_data_index+1)-0x30)*10+(data.at(diff_data_index+2)-0x30));
+            }else if(data.at(diff_data_index+4)==44){
+                diff_data=(double)((data.at(diff_data_index+1)-0x30)*100+(data.at(diff_data_index+2)-0x30)*10+(data.at(diff_data_index+3)-0x30));
+            }else if(data.at(diff_data_index+5)==44){
+                diff_data=(double)((data.at(diff_data_index+1)-0x30)*1000+(data.at(diff_data_index+2)-0x30)*100+(data.at(diff_data_index+3)-0x30)*10+(data.at(diff_data_index+4)-0x30));
+            }
+
+
+            int acc_datax_index=(int)(data.indexOf("acc_datax",1)+strlen("acc_datax")+1);
+            acc_datax_index+=(int)STR_SIZE_PARSE;
+            if(data.at(acc_datax_index+2)==44){
+                acc_datax=(double)((data.at(acc_datax_index+1)-0x30));
+            }else if(data.at(acc_datax_index+3)==44){
+                acc_datax=(double)((data.at(acc_datax_index+1)-0x30)*10+(data.at(acc_datax_index+2)-0x30));
+            }else if(data.at(diff_data_index+4)==44){
+                acc_datax=(double)((data.at(acc_datax_index+1)-0x30)*100+(data.at(acc_datax_index+2)-0x30)*10+(data.at(acc_datax_index+3)-0x30));
+            }else if(data.at(diff_data_index+5)==44){
+                acc_datax=(double)((data.at(acc_datax_index+1)-0x30)*1000+(data.at(acc_datax_index+2)-0x30)*100+(data.at(acc_datax_index+3)-0x30)*10+(data.at(acc_datax_index+4)-0x30));
+            }
+
+
+            int acc_datay_index=(int)(data.indexOf("acc_datay",1)+strlen("acc_datay")+1);
+             acc_datay_index+=(int)STR_SIZE_PARSE;
+            if(data.at(acc_datay_index+2)==44){
+                acc_datay=(double)((data.at(acc_datay_index+1)-0x30));
+            }else if(data.at(acc_datay_index+3)==44){
+                acc_datay=(double)((data.at(acc_datay_index+1)-0x30)*10+(data.at(acc_datay_index+2)-0x30));
+            }else if(data.at(acc_datay_index+4)==44){
+                acc_datay=(double)((data.at(acc_datay_index+1)-0x30)*100+(data.at(acc_datay_index+2)-0x30)*10+(data.at(acc_datay_index+3)-0x30));
+            }
+
+
+            int acc_datax_indey=(int)(data.indexOf("acc_datay",1)+strlen("acc_datay")+1);
+            acc_datax_indey+=(int)STR_SIZE_PARSE;
+            if(data.at(acc_datax_indey+2)==44){
+                acc_datax=(double)((data.at(acc_datax_indey+1)-0x30));
+            }else if(data.at(acc_datay_index+3)==44){
+                acc_datax=(double)((data.at(acc_datax_indey+1)-0x30)*10+(data.at(acc_datax_indey+2)-0x30));
+            }else if(data.at(acc_datay_index+4)==44){
+                acc_datax=(double)((data.at(acc_datax_indey+1)-0x30)*100+(data.at(acc_datax_indey+2)-0x30)*10+(data.at(acc_datax_indey+3)-0x30));
+            }
+
+            //qDebug()<< "rawdata"<<rawdata<<"arith_rawdata"<<arith_rawdata<<"energy_data"<<energy_data<<"diff_data"<<diff_data;
+            //ui->serial_plot->graph(0)->addData(key,double(-10)); //取消异常线
+            //ui->serial_plot->graph(0)->setVisible(false);
+            //display
+            ui->serial_plot->graph(1)->addData(key,double(rawdata));
+            ui->serial_plot->graph(2)->addData(key,double(arith_rawdata));
+            ui->serial_plot->graph(3)->addData(key,double(energy_data));
+            ui->serial_plot->graph(4)->addData(key,double(diff_data));
+            ui->serial_plot->graph(5)->addData(key,double(acc_datax));
+            ui->serial_plot->graph(6)->addData(key,double(acc_datay));
+
+            ui->serial_plot->graph(7)->setVisible(true);
+            ui->serial_plot->graph(7)->addData(key,double(ui->dial_9->value()));
+            ui->serial_plot->xAxis->setRange(key, 8, Qt::AlignRight);
+
+
+            //-----------------------------------------------------------------
+            if(ui->checkBox_first->checkState()==Qt::CheckState::Unchecked){
+               ui->serial_plot->graph(1)->setVisible(false);
+            }else{
+               ui->serial_plot->graph(1)->setVisible(true);
+            }
+            if(ui->checkBox_sencond->checkState()==Qt::CheckState::Unchecked){
+               ui->serial_plot->graph(2)->setVisible(false);
+            }else{
+               ui->serial_plot->graph(2)->setVisible(true);
+            }
+            if(ui->checkBox_third->checkState()==Qt::CheckState::Unchecked){
+               ui->serial_plot->graph(3)->setVisible(false);
+            }else{
+               ui->serial_plot->graph(3)->setVisible(true);
+            }
+
+            //-----------------------------------------------------------------
+;
+        }
+    }
+
+
+
+
     if(data.contains("jw----->presssensor_gather rawdata:"))
     {
         if((data.contains("arith_rawdata:")&&("rawdata:")&&(data.contains("diff_data"))))
@@ -273,6 +415,27 @@ void MainWindow::slot_readByteshjw(QByteArray data)
           ui->textBrowser_3->append(timeStr+QString(data));
     }
     setUpdatesEnabled(true);
+
+
+
+    //-----------------------------------------------------------------
+    if(ui->checkBox_first->checkState()==Qt::CheckState::Unchecked){
+       ui->serial_plot->graph(1)->setVisible(false);
+    }else{
+       ui->serial_plot->graph(1)->setVisible(true);
+    }
+    if(ui->checkBox_sencond->checkState()==Qt::CheckState::Unchecked){
+       ui->serial_plot->graph(2)->setVisible(false);
+    }else{
+       ui->serial_plot->graph(2)->setVisible(true);
+    }
+    if(ui->checkBox_third->checkState()==Qt::CheckState::Unchecked){
+       ui->serial_plot->graph(3)->setVisible(false);
+    }else{
+       ui->serial_plot->graph(3)->setVisible(true);
+    }
+
+
 }
 
 void MainWindow::stringTohexString(QString& str, QString& hexStr)
@@ -733,8 +896,8 @@ void MainWindow::bluetoothConnectedEvent()
 
 void MainWindow::CreatePlot(void)
 {
-
-    ui->serial_plot->addGraph();
+    #if 0
+    ui->serial_plot->addGraph(ui->serial_plot->yAxis, ui->serial_plot->xAxis);
     ui->serial_plot->addGraph();
     ui->serial_plot->addGraph();
     ui->serial_plot->addGraph();
@@ -817,6 +980,92 @@ void MainWindow::CreatePlot(void)
     connect(dataTimer, SIGNAL(timeout()),this, SLOT(realtimeDataSlot()));
     dataTimer->start(100);
 
+    #else
+    ui->serial_plot->addGraph(ui->serial_plot->yAxis, ui->serial_plot->xAxis);
+    ui->serial_plot->addGraph();
+    ui->serial_plot->addGraph();
+    ui->serial_plot->addGraph();
+
+    ui->serial_plot->legend->setVisible(true);
+    ui->serial_plot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
+    ui->serial_plot->axisRect()->setupFullAxesBox();
+    QFont legendFont = font();  // start out with MainWindow's font..
+    legendFont.setPointSize(8); // and make a bit smaller for legend
+    ui->serial_plot->legend->setFont(legendFont);
+    ui->serial_plot->legend->setBrush(QBrush(QColor(255,255,255,230)));
+
+    QPen pen;
+    pen.setWidth(1);
+    pen.setStyle(Qt::PenStyle::DashLine);
+    pen.setColor(Qt::yellow);
+
+    ui->serial_plot->setLocale(QLocale(QLocale::English, QLocale::China)); // period as decimal separator and comma as thousand separator
+    ui->serial_plot->legend->setVisible(true);
+
+    //ui->serial_plot->graph(1)->setPen(pen);
+    ui->serial_plot->graph(0)->setPen(QPen(QColor(120, 255, 12)));
+    ui->serial_plot->graph(0)->setBrush(QColor(120,255,12,40));
+
+    ui->serial_plot->graph(1)->setPen(QPen(QColor(0, 220, 0)));
+    ui->serial_plot->graph(1)->setBrush(QColor(0, 220, 0,40));
+
+    ui->serial_plot->graph(2)->setPen(QPen(QColor(12, 0, 200)));
+    ui->serial_plot->graph(2)->setBrush(QColor(12, 0, 200,40));
+
+    ui->serial_plot->graph(3)->setPen(QPen(QColor(12, 110, 200)));
+    ui->serial_plot->graph(3)->setBrush(QColor(12, 110, 200,40));
+
+
+
+    //ui->serial_plot->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->serial_plot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 1));
+    ui->serial_plot->graph(0)->setLineStyle(QCPGraph::LineStyle::lsLine);
+    ui->serial_plot->graph(0)->setName(tr("参考轴"));
+
+    //ui->serial_plot->graph(1)->setLineStyle(QCPGraph::lsLine);
+    ui->serial_plot->graph(1)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 1));
+    ui->serial_plot->graph(1)->setLineStyle(QCPGraph::LineStyle::lsLine);
+    ui->serial_plot->graph(1)->setName(tr("轴1"));
+
+
+    //ui->serial_plot->graph(2)->setLineStyle(QCPGraph::lsLine);
+    ui->serial_plot->graph(2)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 1));
+    ui->serial_plot->graph(2)->setLineStyle(QCPGraph::LineStyle::lsLine);
+    ui->serial_plot->graph(2)->setName(tr("轴2"));
+
+    ui->serial_plot->graph(3)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 1));
+    ui->serial_plot->graph(3)->setLineStyle(QCPGraph::LineStyle::lsLine);
+    ui->serial_plot->graph(3)->setName(tr("轴3"));
+
+ 
+
+    //设置轴同步
+    for(int i=0;i<4;i++){
+      ui->serial_plot->graph(i)->rescaleAxes(true);
+    }
+    QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
+    timeTicker->setTimeFormat("%h:%m:%s");
+
+     //ui->serial_plot->xAxis->ticker()->setTickCount(11);//11个主刻度
+     //ui->serial_plot->xAxis->ticker()->setTickStepStrategy(QCPAxisTicker::tssReadability);//可读性优于设置
+    ui->serial_plot->xAxis->setTicker(timeTicker);
+    ui->serial_plot->xAxis->setLabel("- - - - - - - - - - - - - - - - - - - -调试时间- - - - - - - - - - - - - - - - - - -");
+    //ui->serial_plot->xAxis->setTickLabelRotation(35);//旋转
+    ui->serial_plot->axisRect()->setupFullAxesBox();
+    ui->serial_plot->yAxis->setRange(-30, 500);
+    ui->serial_plot->yAxis->setLabel("- - - - - -压感信号- - - - - - -");
+    ui->serial_plot->axisRect()->setBackgroundScaled(true);
+    ui->serial_plot->axisRect()->setBackgroundScaledMode(Qt::AspectRatioMode::IgnoreAspectRatio);
+    ui->serial_plot->axisRect()->setBackground(QPixmap(":/Image/BKco.jpeg"));
+
+    //ui->serial_plot->setBackground(QColor(255,255,255));
+    // make left and bottom axes transfer their ranges to right and top axes:
+    connect(ui->serial_plot->xAxis, SIGNAL(rangeChanged(QCPRange)), ui->serial_plot->xAxis2, SLOT(setRange(QCPRange)));
+    connect(ui->serial_plot->yAxis, SIGNAL(rangeChanged(QCPRange)), ui->serial_plot->yAxis2, SLOT(setRange(QCPRange)));
+    dataTimer= new QTimer(this);
+    connect(dataTimer, SIGNAL(timeout()),this, SLOT(realtimeDataSlot()));
+    dataTimer->start(100);
+    #endif
 }
 
 void MainWindow::CreateProductPlot(void)

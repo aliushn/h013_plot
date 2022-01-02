@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.11.1, 2021-12-28T23:15:38. -->
+=======
+<!-- Written by QtCreator 4.11.1, 2022-01-02T19:55:45. -->
+>>>>>>> main
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -287,8 +291,9 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/K73_QTSerial/HM013-PC-user/HM013-PC/HM013-PC.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/K73_QTSerial/HM013-PC-user/HM013-PC/HM013-PC.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HM013-PC2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/githu/h013_plot/HM013-PC/HM013-PC.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/githu/h013_plot/HM013-PC/HM013-PC.pro</value>
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
