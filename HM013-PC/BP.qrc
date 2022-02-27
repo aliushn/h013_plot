@@ -10,5 +10,35 @@
         <file>Image/bkfac.jpeg</file>
         <file>Image/BKfir.jpeg</file>
         <file>Image/BKco.jpeg</file>
+        <file>Image/side1.png</file>
+        <file>Image/side2.png</file>
+        <file>Image/side3.png</file>
+        <file>Image/side4.png</file>
+        <file>Image/side5.png</file>
+        <file>Image/side6.png</file>
+        <file>Image/meboot1.png</file>
+        <file>Image/meboot2.png</file>
+        <file>Image/meboot3.png</file>
+        <file>Image/meboot4.png</file>
+        <file>Image/meboot5.png</file>
+        <file>Image/meboot6.png</file>
+        <file>Image/air.png</file>
+        <file>Image/rander.jpg</file>
+        <file>Image/worldmap.jpg</file>
+        <file>Image/icon/close_t.png</file>
+        <file>Image/icon/camera_f.png</file>
+        <file>Image/icon/camera_t.png</file>
+        <file>Image/icon/close_f.png</file>
+        <file>Image/icon/full_f.png</file>
+        <file>Image/icon/full_t.png</file>
+        <file>Image/icon/generate_f.png</file>
+        <file>Image/icon/generate_t.png</file>
+        <file>Image/icon/load_f.png</file>
+        <file>Image/icon/load_t.png</file>
+        <file>Image/icon/mainwindow_bg.jpg</file>
+        <file>Image/icon/no_photo.png</file>
+        <file>Image/icon/select_t.png</file>
+        <file>Image/icon/window_f.png</file>
+        <file>Image/icon/window_t.png</file>
     </qresource>
 </RCC>

@@ -7,6 +7,7 @@ jwPlot::jwPlot(QWidget *mwight)
 
 }
 
+
 void jwPlot::setupRealtimeDataDemo(QCustomPlot *customPlot)
 {
 

@@ -9,6 +9,12 @@
 
 #include "waterprogressbar.h"
 
+/**********************************
+ *
+ * *********************************/
+
+
+
 bool MainWindow::CreateAnimation(QObject *)
 {
     QParallelAnimationGroup *animationGrop=new QParallelAnimationGroup;
@@ -704,6 +710,7 @@ MainWindow::MainWindow(QWidget *parent)
      /************************************************************/
 
 
+
     ui->dial->setMinimum(0);
     ui->dial->setMaximum(255);
     ui->dial->setNotchTarget(1);
@@ -841,6 +848,33 @@ MainWindow::MainWindow(QWidget *parent)
       ui->textBrowser_7->append(QString("网卡:")+lincese.getWMIC("true"));
       ui->textBrowser_7->append(QString("设计:jinwen"));
       ui->textBrowser_7->append(QString("联系:Email--1044929595@qq.com"));
+
+      //创建opengl
+      CreateOpenGL(this);
+
+    QGraphicsDropShadowEffect *shadowEffect1 = new QGraphicsDropShadowEffect(this);
+    shadowEffect1->setOffset(5, 5);
+    shadowEffect1->setColor(QColor(143, 43, 43));
+    shadowEffect1->setBlurRadius(8);
+
+    QGraphicsDropShadowEffect *shadowEffect2 = new QGraphicsDropShadowEffect(this);
+    shadowEffect2->setOffset(5, 5);
+    shadowEffect2->setColor(QColor(143, 23, 143));
+    shadowEffect2->setBlurRadius(8);
+
+    QGraphicsDropShadowEffect *shadowEffect3 = new QGraphicsDropShadowEffect(this);
+    shadowEffect3->setOffset(5, 5);
+    shadowEffect3->setColor(QColor(143, 143, 43));
+    shadowEffect3->setBlurRadius(8);
+
+    ui->pushButton_19->setGraphicsEffect(shadowEffect1);
+
+    ui->pushButton_20->setGraphicsEffect(shadowEffect2);
+
+    ui->pushButton_21->setGraphicsEffect(shadowEffect3);
+
+    //创建雷达
+    CreateRadarScanning(this);
 }
 
 
@@ -1893,4 +1927,129 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_radioButton_2_clicked()
 {
 
+}
+
+bool MainWindow::CreateOpenGL(QObject *)
+{
+
+    mopengl =new  GLWidget(ui->openGLWidget);
+    return false;
+}
+
+void MainWindow::on_pushButton_18_clicked()
+{
+
+}
+
+void MainWindow::addAnimationWidget(QSequentialAnimationGroup *Animation,QPushButton *widget)
+{
+    int Durtime = 200;
+    int startX = 600;
+    if(!widget->isHidden())
+    {
+        QPropertyAnimation *pScaleAnimation = new QPropertyAnimation(widget, "pos");
+        pScaleAnimation->setDuration(Durtime);
+        pScaleAnimation->setStartValue(QPoint(200, widget->y()));
+        pScaleAnimation->setEndValue(QPoint(widget->x(),widget->y()));
+        pScaleAnimation->setEasingCurve(QEasingCurve::Linear);
+        Animation->addAnimation(pScaleAnimation);
+        widget->move(startX,widget->y());
+    }
+}
+void MainWindow::on_currentChanged(QSequentialAnimationGroup *Animation,int indexs)
+{
+    if(Animation->state()==QSequentialAnimationGroup::Running){
+        Animation->pause();
+        Animation->resume();
+        return;
+    }
+    Animation->clear();
+    if(indexs ==0)
+    {
+        //this->addAnimationWidget(Animation,ui->btn_1);
+        //this->addAnimationWidget(Animation,ui->btn_2);
+        //this->addAnimationWidget(Animation,ui->btn_3);
+        //this->addAnimationWidget(Animation,ui->btn_4);
+    }
+    else
+    {
+        //this->addAnimationWidget(Animation,ui->btn_5);
+        //this->addAnimationWidget(Animation,ui->btn_6);
+        //this->addAnimationWidget(Animation,ui->btn_7);
+        //this->addAnimationWidget(Animation,ui->btn_8);
+    }
+    Animation->start();
+}
+
+void MainWindow::on_tabWidget_currentChanged(int index)
+{
+    if((index==0)||(index==1)){
+
+        QWidget *widget0  = ui->tabWidget->widget(0);
+        QWidget *widget1  = ui->tabWidget->widget(1);
+
+        QPixmap pixmap0 = QPixmap::grabWidget(widget0);//
+        QPixmap pixmap1 = QPixmap::grabWidget(widget1);//
+
+        QPixmap *pixmap  = new QPixmap(pixmap0.width() + pixmap1.width()  ,  pixmap0.height());
+
+        QImage image(pixmap0.width() + pixmap1.width() , pixmap0.height(),QImage::Format_ARGB32);
+        image.fill(QColor(Qt::black));
+
+        QPainter p;
+        //p.setRenderHint(QPainter::Antialiasing, true);//
+        p.begin(&image);
+        QBrush brush(QColor(255, 255, 0), Qt::Dense4Pattern);
+        p.setBrush(brush);
+        QPen pen ;
+        pen.setColor(QColor(Qt::red));
+        p.setPen(pen);
+        p.drawPixmap(0,0,pixmap0);
+        p.drawPixmap(pixmap0.width(),0,pixmap1);
+        p.end();
+
+
+        QLabel *animationWidget = new QLabel(ui->tabWidget);
+        animationWidget->setPixmap(QPixmap::fromImage(image));
+        QTabBar *bar = ui->tabWidget->tabBar();
+        QSize size1 = bar->size();
+        QSize size2 =  ui->tabWidget->size();
+
+        animationWidget->show();
+        animationWidget->raise();
+        animationWidget->setGeometry(1,1,pixmap0.width(),pixmap0.height());
+
+        if(index == 1)
+        {
+        QPropertyAnimation *move1 = new QPropertyAnimation(animationWidget,"geometry" );
+        move1->setDuration(700);
+        move1->setStartValue(QRect(  0,bar->size().height(),pixmap0.width(),pixmap0.height())  );
+        move1->setEndValue(QRect( -pixmap0.width(), bar->size().height() ,pixmap0.width()*2,pixmap0.height()  )  );
+        move1->start();
+        connect(move1, &QAbstractAnimation::finished, this, [=]() {
+        delete animationWidget;
+        delete move1;
+        });
+        }else{
+        QPropertyAnimation *move1 = new QPropertyAnimation(animationWidget ,"geometry" );
+        move1->setDuration(2000);
+        move1->setStartValue(QRect(-pixmap0.width(),bar->size().height(),pixmap0.width()*2,pixmap0.height()));
+        move1->setEndValue(QRect(0,bar->size().height(),pixmap0.width(),pixmap0.height()));
+        move1->start();
+        connect(move1, &QAbstractAnimation::finished, this, [=]() {
+        delete animationWidget;
+        delete move1;
+        });
+        }
+
+    }
+}
+
+
+bool MainWindow::CreateRadarScanning(QObject *)
+{
+    mRadarScanning=new RadarScanning(ui->widget_2);
+    ui->widget_2->show();
+    mRadarScanning->show();
+    return false;
 }

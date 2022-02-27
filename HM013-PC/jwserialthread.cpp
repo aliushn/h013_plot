@@ -112,7 +112,7 @@ void jwSerialThread::doDataReceive()
 {
    QString resultstr;
    if(mserila!=nullptr){
-        QByteArray buffer=mserila->readAll();
+        QByteArray  buffer=mserila->readAll();
         QString resultstr=buffer;
         emit sendResulttoGUI(buffer);
     }

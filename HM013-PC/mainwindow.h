@@ -46,6 +46,16 @@
 #include "licensehjw.h"
 #include "jwserialpro.h"
 
+#include <QOpenGLWidget>
+#include <QOpenGLFunctions>
+#include <jwOpengl/glwidget.h>
+#include <QSequentialAnimationGroup>
+
+//创建雷达扫描
+#include "jwRadarScanning/RadarScanning.h"
+
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -80,6 +90,12 @@ public:
 	void sendHexData(QString& tips, uint8_t* ibuf, uint8_t ilen);
     //创建动画
     bool CreateAnimation(QObject *);
+    void addAnimationWidget(QSequentialAnimationGroup *Animation,QPushButton *widget);
+    void on_currentChanged(QSequentialAnimationGroup *Animation,int indexs);
+    //创建OPENGL
+    bool CreateOpenGL(QObject *);
+    //创建雷达
+    bool CreateRadarScanning(QObject *);
 signals:
     void serialDataSend(const QByteArray data);//通知串口接收数据
     void serialDataRead(void);
@@ -163,6 +179,10 @@ private slots:
     void on_pushButton_3_clicked();
 
     void on_radioButton_2_clicked();
+    void on_pushButton_18_clicked();
+
+
+    void on_tabWidget_currentChanged(int index);
 
 public :
     // 串口
@@ -234,5 +254,12 @@ private:
     //压感阀值
     int m_pressSurenValue=0;
     Licensehjw lincese;
+
+    //创建opengl
+    GLWidget *mopengl;
+
+    //创建雷达扫描
+    RadarScanning *mRadarScanning;
+
 };
 #endif // MAINWINDOW_H
