@@ -52,25 +52,17 @@ bool MainWindow::CreateSerialPro(void)
     portThread=new QThread();
     SerialObject=new jwSerialPro();
     SerialObject->moveToThread(portThread);
-
     connect(SerialObject,SIGNAL(signal_message(QString)),this,SLOT(slot_message(QString)));
     connect(SerialObject,SIGNAL(signal_deleteportobject()),portThread,SLOT(quit()));
     connect(SerialObject,SIGNAL(signal_deleteportobject()),portThread,SLOT(deleLater()));
-
     connect(portThread,&QThread::finished,portThread,&QObject::deleteLater);
     connect(portThread,SIGNAL(finished()),SerialObject,SLOT(deleteLater));
     connect(portThread,SIGNAL(started()),SerialObject,SLOT(slot_process()));
-
-#if 0 //cancel
-    //connect(SerialObject,SIGNAL(signal_byteRead(QByteArry)),this,SLOT(slot_readBytes(QByteArry)));
-#endif
     connect(SerialObject,&jwSerialPro::signal_byteRead,this,&MainWindow::slot_readByteshjw);
     connect(this,SIGNAL(signal_writeDataRequest(QByteArray)),SerialObject,SLOT(slot_writeBytes(QByteArray)));
     connect(this,SIGNAL(signal_serialportopen(QString,qint32)),SerialObject,SLOT(open(QString,qint32)));
     connect(this,SIGNAL(signal_serialportclose()),SerialObject,SLOT(close()));
-
     portThread->start();
-
     return false;
 }
 
@@ -85,20 +77,12 @@ void MainWindow::slot_readByteshjw(QByteArray data)
     QString timeStr = "[" + dateTime.toString(" HH:mm:ss.zzz") + "] ";
     QString tmpStr;
     int power=0;
-    int diff=0;
-    int diff_data[3];
+
     //显示
     static QTime time(QTime::currentTime());
     double key = time.elapsed()/5000.0;
 
     if(data.size()<100) return;
-
-    double plotdouble;
-#if 0
-    ui->serial_plot->graph(0)->addData(key,plotdouble);
-    ui->serial_plot->xAxis->setRange(key, 8, Qt::AlignTrailing);
-    ui->serial_plot->replot();
-#endif
 
      #define  PRINTF_STRINg  "diff_data:	"
     // TODO
@@ -107,7 +91,6 @@ void MainWindow::slot_readByteshjw(QByteArray data)
     uint8_t *pdata = (uint8_t*)info.data();
     uint8_t buf[255] = {0};
 
-    uint16_t j=0;
     // 根据值判断做逻辑处理，可做成函数
 
     if(data.contains("jw:rawdata:"))
@@ -254,24 +237,7 @@ void MainWindow::slot_readByteshjw(QByteArray data)
     {
         if((data.contains("arith_rawdata:")&&("rawdata:")&&(data.contains("diff_data"))))
         {
-#if 0
-            //if(data.size()<120) return;
-            qDebug()<<"diff index"<<data.indexOf("diff_data",1);
-            int index=data.indexOf("diff_data",1);
-            diff_data[0]=data.at(index+18);
-            diff_data[1]=data.at(index+19);
-            diff_data[2]=data.at(index+20);
-            qDebug()<<"size data :"<<data<<diff_data[0]<<diff_data[1]<<diff_data[2];
-            if(diff_data[2]==','){
-                diff=(diff_data[0]-0x30)*10+(diff_data[1]-0x30);
-            }else if(diff_data[1]==',')
-            {
-                diff=(diff_data[0]-0x30);
-            }
-            else{
-                diff=(diff_data[0]-0x30)*100+(diff_data[1]-0x30)*10+(diff_data[2]-0x30);
-            }
-#else
+
             //qDebug()<<"data_size"<<data.size();
 
             double rawdata=0;
@@ -309,7 +275,6 @@ void MainWindow::slot_readByteshjw(QByteArray data)
                 energy_data=(data.at(energy_data_index+1)-0x30)*100+(data.at(energy_data_index+2)-0x30)*10+(data.at(energy_data_index+3)-0x30);
             }
             ////////////////////////////////////////////////////////////////////////////////////////
-
             int diff_data_index=(int)(data.indexOf("diff_data",1)+strlen("diff_data")+1);
             if(data.at(diff_data_index+2)==44){
                 diff_data=(data.at(diff_data_index+1)-0x30);
@@ -318,17 +283,10 @@ void MainWindow::slot_readByteshjw(QByteArray data)
             }else if(data.at(diff_data_index+4)==44){
                 diff_data=(data.at(diff_data_index+1)-0x30)*100+(data.at(diff_data_index+2)-0x30)*10+(data.at(diff_data_index+3)-0x30);
             }
-
-
-#endif
-            //qDebug()<< "rawdata"<<rawdata<<"arith_rawdata"<<arith_rawdata<<"energy_data"<<energy_data<<"diff_data"<<diff_data;
-
             ui->serial_plot->graph(0)->addData(key,double(rawdata));
-
             ui->serial_plot->graph(1)->addData(key,double(arith_rawdata));
             ui->serial_plot->graph(2)->addData(key,double(energy_data));
             ui->serial_plot->graph(3)->addData(key,double(diff_data));
-
             ui->serial_plot->xAxis->setRange(key, 8, Qt::AlignTrailing);
             ui->serial_plot->replot();
         }
@@ -875,6 +833,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     //创建雷达
     CreateRadarScanning(this);
+
+    //创建单元测试
+    mtestNoudle=new TestModule;
+    mtestNoudle->setWindowTitle(tr("TesrModle"));
 }
 
 
@@ -1936,9 +1898,18 @@ bool MainWindow::CreateOpenGL(QObject *)
     return false;
 }
 
+static bool showstatus=false;
 void MainWindow::on_pushButton_18_clicked()
 {
+    if(false==showstatus){
 
+        mtestNoudle->show();
+    }
+    else{
+    mtestNoudle->hide();
+    }
+     QMessageBox::information(this,QString::fromUtf8("提示"),QString::fromUtf8("选择文件失败无路径！"),"OK");
+     showstatus=showstatus==true?false:true;
 }
 
 void MainWindow::addAnimationWidget(QSequentialAnimationGroup *Animation,QPushButton *widget)

@@ -26,8 +26,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>-10</x>
+      <y>-90</y>
       <width>1731</width>
       <height>781</height>
      </rect>
@@ -36,7 +36,7 @@
      <number>-3</number>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>6</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -1471,6 +1471,29 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="wireless">
+     <attribute name="icon">
+      <iconset>
+       <normalon>:/Image/meboot2.png</normalon>
+      </iconset>
+     </attribute>
+     <attribute name="title">
+      <string>无线控制</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_26">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>80</width>
+        <height>24</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>连线</string>
       </property>
      </widget>
     </widget>

@@ -53,7 +53,7 @@
 
 //创建雷达扫描
 #include "jwRadarScanning/RadarScanning.h"
-
+#include "testmodule.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -261,5 +261,7 @@ private:
     //创建雷达扫描
     RadarScanning *mRadarScanning;
 
+    //Ui::TestModule *testModuleUI;
+    TestModule *mtestNoudle;
 };
 #endif // MAINWINDOW_H

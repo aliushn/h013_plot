@@ -46,13 +46,12 @@ void jwSerialPro::close()
     qDebug()<<__FUNCTION__<<"thread:"<<QThread::currentThread();
 #endif
     this->serialport->setPortName(string);
-    //this->serialport->setBaudRate(baudrate);
     this->serialport->setBaudRate(qint32(115200));//1152000
     this->serialport->setDataBits(QSerialPort::Data8);
     this->serialport->setStopBits(QSerialPort::OneStop);
     this->serialport->setParity(QSerialPort::NoParity);
     this->serialport->setFlowControl(QSerialPort::NoFlowControl);
-    this->serialport->setReadBufferSize(1024*1024);
+    this->serialport->setReadBufferSize(50*1024*1024);
     if(this->serialport->open(QIODevice::ReadWrite)){
         emit signal_portstatuschange(true);
     }else{

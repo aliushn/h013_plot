@@ -46,6 +46,7 @@ SOURCES += \
     maintable.cpp \
     mainwindow.cpp \
     plothjw.cpp \
+    testmodule.cpp \
     xyseriesiodevice.cpp\
     jwserial.cpp \
     jwplot/jwplot.cpp\
@@ -75,6 +76,7 @@ HEADERS += \
     mainwindow.h\
     hidapi.h \
     plothjw.h \
+    testmodule.h \
     xyseriesiodevice.h\
     jwserial.h \
     jwplot/jwplot.h\
@@ -90,7 +92,8 @@ HEADERS += \
 
 FORMS += \
     enterwindow.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    testmodule.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
