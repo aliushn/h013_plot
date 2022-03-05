@@ -17,7 +17,7 @@
 #include "jwblue.h"
 #include <QMessageBox>
 #include "bmachinecontrol.h"
-#include "Eigen"
+#include <jwDatabase/jwdatabase.h>
 
 #define printf qDebug
 

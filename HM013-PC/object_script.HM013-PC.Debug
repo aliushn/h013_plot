@@ -4,6 +4,7 @@ INPUT(
 ./debug\enterwindow.o
 ./debug\fileprotocolparsehjw.o
 ./debug\genericcallback.o
+./debug\jwdatabase.o
 ./debug\RadarScanning.o
 ./debug\jwserialthread.o
 ./debug\licensehjw.o

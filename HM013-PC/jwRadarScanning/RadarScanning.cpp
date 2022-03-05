@@ -17,13 +17,15 @@ RadarScanning::RadarScanning(QWidget *parent)
 
 	animation_time = new QTimer(this);
 	connect(animation_time, &QTimer::timeout, this, &RadarScanning::timeOut);
-    animation_time->setInterval(20);
+    animation_time->setInterval(30);
 	animation_time->start();
 
 	vec = new std::vector<PosStruct>;
-    vec->reserve(10);
+    vec->reserve(100);
 
 }
+
+
 
 void RadarScanning::paintEvent(QPaintEvent* e)
 {

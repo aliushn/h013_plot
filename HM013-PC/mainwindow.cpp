@@ -2050,6 +2050,6 @@ bool MainWindow::CreateRadarScanning(QObject *)
 {
     mRadarScanning=new RadarScanning(ui->widget_2);
     ui->widget_2->show();
-    mRadarScanning->show();
+    //mRadarScanning->show();
     return false;
 }

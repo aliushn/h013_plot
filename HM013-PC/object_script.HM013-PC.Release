@@ -4,6 +4,7 @@ INPUT(
 ./release\enterwindow.o
 ./release\fileprotocolparsehjw.o
 ./release\genericcallback.o
+./release\jwdatabase.o
 ./release\RadarScanning.o
 ./release\jwserialthread.o
 ./release\licensehjw.o

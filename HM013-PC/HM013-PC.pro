@@ -11,6 +11,7 @@ QT       += core gui\
             axcontainer\
             opengl\
             printsupport\
+            sql\
             ##mqtt\
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -37,6 +38,7 @@ SOURCES += \
     enterwindow.cpp \
     fileprotocolparsehjw.cpp \
     genericcallback.cpp \
+    jwDatabase/jwdatabase.cpp \
     jwRadarScanning/RadarScanning.cpp \
     jwserialthread.cpp \
     licensehjw.cpp \
@@ -64,6 +66,7 @@ HEADERS += \
     enterwindow.h \
     fileprotocolparsehjw.h \
     genericcallback.h \
+    jwDatabase/jwdatabase.h \
     jwRadarScanning/RadarScanning.h \
     jwserialthread.h \
     licensehjw.h \
@@ -105,7 +108,7 @@ win32: LIBS += -lSetupAPI -luser32
 
 INCLUDEPATH +=C:\K73_QTSerial\HM013-PC-user\HM013-PC\FFTReal-2.11\
               $$PWD/ffmpeg/ffmpeg-4.0.2-win64-dev/include\
-              $$PWD/jwEigen/eigen-3.4.0/Eigen\
+             ## $$PWD/jwEigen/eigen-3.4.0/Eigen\
 
 
 

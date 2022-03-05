@@ -851,6 +851,7 @@ public:
         openGLWidget = new GLWidget(tab_6);
         openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
         openGLWidget->setGeometry(QRect(110, 20, 891, 411));
+        openGLWidget->setStyleSheet(QStringLiteral("background-image: url(:/Image/worldmap.jpg);"));
         pushButton_19 = new QPushButton(tab_6);
         pushButton_19->setObjectName(QStringLiteral("pushButton_19"));
         pushButton_19->setGeometry(QRect(10, 20, 91, 61));
@@ -866,7 +867,7 @@ public:
         widget_2 = new QWidget(tab_6);
         widget_2->setObjectName(QStringLiteral("widget_2"));
         widget_2->setGeometry(QRect(1010, 20, 711, 411));
-        widget_2->setStyleSheet(QStringLiteral("border-image: url(:/Image/worldmap.jpg);"));
+        widget_2->setStyleSheet(QStringLiteral("background-image: url(:/Image/worldmap.jpg);"));
         pushButton_22 = new QPushButton(tab_6);
         pushButton_22->setObjectName(QStringLiteral("pushButton_22"));
         pushButton_22->setGeometry(QRect(1000, 450, 80, 51));

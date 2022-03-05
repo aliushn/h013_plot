@@ -1344,6 +1344,9 @@ p, li { white-space: pre-wrap; }
         <height>411</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton_19">
       <property name="geometry">
@@ -1403,7 +1406,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/Image/worldmap.jpg);</string>
+       <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_22">

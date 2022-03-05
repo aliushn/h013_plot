@@ -249,6 +249,7 @@ Makefile: HM013-PC.pro ../../../Qt6.2/5.9.9/mingw53_32/mkspecs/win32-g++/qmake.c
 		../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Network.prl \
 		../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5SerialPort.prl \
 		../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Bluetooth.prl \
+		../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Sql.prl \
 		../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile HM013-PC.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../Qt6.2/5.9.9/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -439,6 +440,7 @@ HM013-PC.pro:
 ../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Network.prl:
 ../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5SerialPort.prl:
 ../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Bluetooth.prl:
+../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Sql.prl:
 ../../../Qt6.2/5.9.9/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile HM013-PC.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
