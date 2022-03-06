@@ -223,7 +223,7 @@ public:
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setEnabled(true);
-        tabWidget->setGeometry(QRect(0, 0, 1731, 781));
+        tabWidget->setGeometry(QRect(0, 0, 1741, 781));
         tabWidget->setToolTipDuration(-3);
         tabWidget->setMovable(false);
         tab = new QWidget();

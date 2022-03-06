@@ -12,6 +12,7 @@ INPUT(
 ./debug\maintable.o
 ./debug\mainwindow.o
 ./debug\plothjw.o
+./debug\testmodule.o
 ./debug\xyseriesiodevice.o
 ./debug\jwserial.o
 ./debug\jwplot.o
@@ -29,6 +30,7 @@ INPUT(
 ./debug\moc_jwserialthread.o
 ./debug\moc_jwmusic.o
 ./debug\moc_mainwindow.o
+./debug\moc_testmodule.o
 ./debug\moc_xyseriesiodevice.o
 ./debug\moc_jwserial.o
 ./debug\moc_qcustomplot.o

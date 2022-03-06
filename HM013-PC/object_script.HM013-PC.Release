@@ -12,6 +12,7 @@ INPUT(
 ./release\maintable.o
 ./release\mainwindow.o
 ./release\plothjw.o
+./release\testmodule.o
 ./release\xyseriesiodevice.o
 ./release\jwserial.o
 ./release\jwplot.o
@@ -29,6 +30,7 @@ INPUT(
 ./release\moc_jwserialthread.o
 ./release\moc_jwmusic.o
 ./release\moc_mainwindow.o
+./release\moc_testmodule.o
 ./release\moc_xyseriesiodevice.o
 ./release\moc_jwserial.o
 ./release\moc_qcustomplot.o
