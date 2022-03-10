@@ -12,6 +12,9 @@ EnterWindow::EnterWindow(QWidget *parent) :
     userok=new bool;
     *userok=false;
 
+
+
+
 }
 
 EnterWindow::~EnterWindow()

@@ -15,12 +15,16 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextBrowser>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_TestModule
 {
 public:
+    QTextBrowser *textBrowser;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *TestModule)
     {
@@ -28,6 +32,12 @@ public:
             TestModule->setObjectName(QStringLiteral("TestModule"));
         TestModule->resize(326, 577);
         TestModule->setStyleSheet(QStringLiteral(""));
+        textBrowser = new QTextBrowser(TestModule);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+        textBrowser->setGeometry(QRect(30, 290, 256, 192));
+        pushButton = new QPushButton(TestModule);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(50, 130, 80, 24));
 
         retranslateUi(TestModule);
 
@@ -37,6 +47,7 @@ public:
     void retranslateUi(QDialog *TestModule)
     {
         TestModule->setWindowTitle(QApplication::translate("TestModule", "Dialog", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("TestModule", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };

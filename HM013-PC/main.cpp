@@ -19,13 +19,16 @@
 #include "bmachinecontrol.h"
 #include <jwDatabase/jwdatabase.h>
 
-#define printf qDebug
+#include "jwAlgorithm/jwfft.h"
 
+
+#define printf qDebug
 #define HKEY_CURRENT_USE_QT "HKEY_CURRENT_USER\\Software\\JW||TEST"
 
 
 int main(int argc, char *argv[])
 {
+
     QApplication sdk(argc, argv);
 
     QFile file(":black.qss"); // 指定路径
@@ -48,5 +51,8 @@ int main(int argc, char *argv[])
     //setting.remove("name");
 
 
+    jwFFT fft;
+
+    fft.test();
    return sdk.exec();
 }

@@ -38,6 +38,7 @@ SOURCES += \
     enterwindow.cpp \
     fileprotocolparsehjw.cpp \
     genericcallback.cpp \
+    jwAlgorithm/jwfft.cpp \
     jwDatabase/jwdatabase.cpp \
     jwRadarScanning/RadarScanning.cpp \
     jwserialthread.cpp \
@@ -67,6 +68,7 @@ HEADERS += \
     enterwindow.h \
     fileprotocolparsehjw.h \
     genericcallback.h \
+    jwAlgorithm/jwfft.h \
     jwDatabase/jwdatabase.h \
     jwRadarScanning/RadarScanning.h \
     jwserialthread.h \
@@ -111,6 +113,9 @@ win32: LIBS += -lSetupAPI -luser32
 
 INCLUDEPATH +=C:\K73_QTSerial\HM013-PC-user\HM013-PC\FFTReal-2.11\
               $$PWD/ffmpeg/ffmpeg-4.0.2-win64-dev/include\
+              $$PWD/ffmpeg/ffmpeg-4.0.2-win64-dev/include\
+              D:\opencvlib\opencv\build\install\include\
+
              ## $$PWD/jwEigen/eigen-3.4.0/Eigen\
 
 
@@ -123,6 +128,9 @@ LIBS += -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lavcodec \
         -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lpostproc \
         -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lswresample \
         -L$$PWD/ffmpeg/"ffmpeg-4.0.2-win64-dev/lib" -lswscale \
+        D:\opencvlib\opencv\build\install\x64\mingw\staticlib\libopencv_*.a\
+        D:\opencvlib\opencv\build\install\x64\mingw\staticlib\lib*.a\
 
-DISTFILES +=
+
+###DISTFILES +=
 

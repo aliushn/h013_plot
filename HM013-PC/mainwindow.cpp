@@ -1908,7 +1908,7 @@ void MainWindow::on_pushButton_18_clicked()
     else{
     mtestNoudle->hide();
     }
-     QMessageBox::information(this,QString::fromUtf8("提示"),QString::fromUtf8("选择文件失败无路径！"),"OK");
+     //QMessageBox::information(this,QString::fromUtf8("提示"),QString::fromUtf8("选择文件失败无路径！"),"OK");
      showstatus=showstatus==true?false:true;
 }
 

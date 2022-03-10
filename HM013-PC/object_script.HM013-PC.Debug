@@ -4,6 +4,7 @@ INPUT(
 ./debug\enterwindow.o
 ./debug\fileprotocolparsehjw.o
 ./debug\genericcallback.o
+./debug\jwfft.o
 ./debug\jwdatabase.o
 ./debug\RadarScanning.o
 ./debug\jwserialthread.o
@@ -26,6 +27,7 @@ INPUT(
 ./debug\qrc_BP.o
 ./debug\moc_appthreadhjw.o
 ./debug\moc_enterwindow.o
+./debug\moc_jwfft.o
 ./debug\moc_RadarScanning.o
 ./debug\moc_jwserialthread.o
 ./debug\moc_jwmusic.o
