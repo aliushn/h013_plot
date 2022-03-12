@@ -647,8 +647,8 @@ MainWindow::MainWindow(QWidget *parent)
     QDateTime time=QDateTime::currentDateTime();
     timer=new QTimer(this);
 
-    setMinimumSize(1737,931);
-    setMaximumSize(1737,931);
+    //setMinimumSize(1737,931);
+    //setMaximumSize(1737,931);
     setWindowOpacity(0.90);
     this->setWindowTitle(tr("K73_小米"));
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
@@ -782,7 +782,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //CreatWaveplot();//cancel by hjw when 10-27
 
-    //CreateProductPlot();
+    CreateProductPlot();
 
     //CreateSerialportWindow();
 #ifdef SERIALPORT_V2_ENBALE
@@ -1068,62 +1068,62 @@ void MainWindow::CreateProductPlot(void)
 {
 
     ui->graph_plot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-    QString demoName = "Multi Axis";
+    QString demoName = "BluetoothAudioData";
 
     ui->graph_plot->setLocale(QLocale(QLocale::English, QLocale::UnitedKingdom)); // period as decimal separator and comma as thousand separator
     ui->graph_plot->legend->setVisible(true);
     QFont legendFont = font();  // start out with MainWindow's font..
     legendFont.setPointSize(9); // and make a bit smaller for legend
     ui->graph_plot->legend->setFont(legendFont);
-    ui->graph_plot->legend->setBrush(QBrush(QColor(255,255,255,230)));
+    ui->graph_plot->legend->setBrush(QBrush(Qt::white));
     // by default, the legend is in the inset layout of the main axis rect. So this is how we access it to change legend placement:
-    ui->graph_plot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignBottom|Qt::AlignRight);
-
+    //ui->graph_plot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignBottom|Qt::AlignRight);
+    ui->graph_plot->yAxis->setRange(-30, 500);
     // setup for graph 0: key axis left, value axis bottom
     // will contain left maxwell-like function
-    ui->graph_plot->addGraph(ui->graph_plot->yAxis, ui->graph_plot->xAxis);
-    ui->graph_plot->graph(0)->setPen(QPen(QColor(255, 100, 0)));
-    ui->graph_plot->graph(0)->setBrush(QBrush(QPixmap("./balboa.jpg"))); // fill with texture of specified image
-    ui->graph_plot->graph(0)->setLineStyle(QCPGraph::lsNone);
-    ui->graph_plot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 5));
-    ui->graph_plot->graph(0)->setName("Left maxwell function");
+    ui->graph_plot->addGraph(ui->graph_plot->xAxis, ui->graph_plot->yAxis);
+    ui->graph_plot->graph(0)->setPen(QPen(Qt::darkGray));
+    //ui->graph_plot->graph(0)->setBrush(QBrush(QPixmap("./balboa.jpg"))); // fill with texture of specified image
+    ui->graph_plot->graph(0)->setLineStyle(QCPGraph::lsImpulse);
+    //ui->graph_plot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 1));
+    ui->graph_plot->graph(0)->setName("音频");
 
     // setup for graph 1: key axis bottom, value axis left (those are the default axes)
     // will contain bottom maxwell-like function with error bars
     ui->graph_plot->addGraph();
-    ui->graph_plot->graph(1)->setPen(QPen(Qt::red));
-    ui->graph_plot->graph(1)->setBrush(QBrush(QPixmap("./balboa.jpg"))); // same fill as we used for graph 0
-    ui->graph_plot->graph(1)->setLineStyle(QCPGraph::lsStepCenter);
-    ui->graph_plot->graph(1)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, Qt::red, Qt::white, 7));
-    ui->graph_plot->graph(1)->setName("Bottom maxwell function");
-    QCPErrorBars *errorBars = new QCPErrorBars(ui->graph_plot->xAxis, ui->graph_plot->yAxis);
-    errorBars->removeFromLegend();
-    errorBars->setDataPlottable(ui->graph_plot->graph(1));
+    ui->graph_plot->graph(1)->setPen(QPen(Qt::yellow));
+    //ui->graph_plot->graph(1)->setBrush(QBrush(QPixmap("./balboa.jpg"))); // same fill as we used for graph 0
+    ui->graph_plot->graph(1)->setLineStyle(QCPGraph::lsImpulse);
+    //ui->graph_plot->graph(1)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, Qt::red, Qt::white, 7));
+    ui->graph_plot->graph(1)->setName("FFT");
+    //QCPErrorBars *errorBars = new QCPErrorBars(ui->graph_plot->xAxis, ui->graph_plot->yAxis);
+    //errorBars->removeFromLegend();
+    //errorBars->setDataPlottable(ui->graph_plot->graph(1));
 
 
     // setup for graph 2: key axis top, value axis right
     // will contain high frequency sine with low frequency beating:
-    ui->graph_plot->addGraph(ui->graph_plot->xAxis2, ui->graph_plot->yAxis2);
-    ui->graph_plot->graph(2)->setPen(QPen(Qt::blue));
-    ui->graph_plot->graph(2)->setName("High frequency sine");
+    //ui->graph_plot->addGraph(ui->graph_plot->xAxis2, ui->graph_plot->yAxis2);
+    //ui->graph_plot->graph(2)->setPen(QPen(Qt::blue));
+    //ui->graph_plot->graph(2)->setName("High frequency sine");
 
     // setup for graph 3: same axes as graph 2
     // will contain low frequency beating envelope of graph 2
-    ui->graph_plot->addGraph(ui->graph_plot->xAxis2, ui->graph_plot->yAxis2);
+    //ui->graph_plot->addGraph(ui->graph_plot->xAxis2, ui->graph_plot->yAxis2);
     QPen blueDotPen;
-    blueDotPen.setColor(QColor(30, 40, 255, 150));
+    blueDotPen.setColor(QColor(30, 100, 100, 150));
     blueDotPen.setStyle(Qt::DotLine);
     blueDotPen.setWidthF(4);
-    ui->graph_plot->graph(3)->setPen(blueDotPen);
-    ui->graph_plot->graph(3)->setName("Sine envelope");
+    //ui->graph_plot->graph(3)->setPen(blueDotPen);
+    //ui->graph_plot->graph(3)->setName("Sine envelope");
 
     // setup for graph 4: key axis right, value axis top
     // will contain parabolically distributed data points with some random perturbance
-    ui->graph_plot->addGraph(ui->graph_plot->xAxis2, ui->graph_plot->yAxis2);
-    ui->graph_plot->graph(4)->setPen(QColor(50, 50, 50, 255));
-    ui->graph_plot->graph(4)->setLineStyle(QCPGraph::lsLine);
-    ui->graph_plot->graph(4)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDot, 4));
-    ui->graph_plot->graph(4)->setName("Some random data around\na quadratic function");
+    //ui->graph_plot->addGraph(ui->graph_plot->xAxis2, ui->graph_plot->yAxis2);
+    //ui->graph_plot->graph(4)->setPen(QColor(50, 50, 50, 255));
+    //ui->graph_plot->graph(4)->setLineStyle(QCPGraph::lsLine);
+    //ui->graph_plot->graph(4)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDot, 4));
+    //ui->graph_plot->graph(4)->setName("Some random data around\na quadratic function");
 
     // generate data, just playing with numbers, not much to learn here:
     QVector<double> x0(25), y0(25);
@@ -1155,18 +1155,18 @@ void MainWindow::CreateProductPlot(void)
     // pass data points to graphs:
     ui->graph_plot->graph(0)->setData(x0, y0);
     ui->graph_plot->graph(1)->setData(x1, y1);
-    errorBars->setData(y1err);
-    ui->graph_plot->graph(2)->setData(x2, y2);
-    ui->graph_plot->graph(3)->setData(x3, y3);
-    ui->graph_plot->graph(4)->setData(x4, y4);
+    //errorBars->setData(y1err);
+    //ui->graph_plot->graph(2)->setData(x2, y2);
+    //ui->graph_plot->graph(3)->setData(x3, y3);
+    //ui->graph_plot->graph(4)->setData(x4, y4);
     // activate top and right axes, which are invisible by default:
     ui->graph_plot->xAxis2->setVisible(true);
     ui->graph_plot->yAxis2->setVisible(true);
     // set ranges appropriate to show data:
-    ui->graph_plot->xAxis->setRange(0, 2.7);
-    ui->graph_plot->yAxis->setRange(0, 2.6);
-    ui->graph_plot->xAxis2->setRange(0, 3.0*M_PI);
-    ui->graph_plot->yAxis2->setRange(-70, 35);
+    //ui->graph_plot->xAxis->setRange(0, 2.7);
+    //ui->graph_plot->yAxis->setRange(0, 2.6);
+
+
 
     QSharedPointer<QCPAxisTickerTime> timeTicker(new QCPAxisTickerTime);
     timeTicker->setTimeFormat("%h:%m:%s");
@@ -1175,25 +1175,24 @@ void MainWindow::CreateProductPlot(void)
     // set pi ticks on top axis:
     ui->graph_plot->xAxis2->setTicker(QSharedPointer<QCPAxisTickerTime>(new QCPAxisTickerTime));
     // add title layout element:
-    ui->graph_plot->plotLayout()->insertRow(0);
-    ui->graph_plot->plotLayout()->addElement(0, 0, new QCPTextElement(ui->graph_plot, "K73测试项", QFont("sans", 12, QFont::Bold)));
+    //ui->graph_plot->plotLayout()->insertRow(0);
+    //ui->graph_plot->plotLayout()->addElement(0, 0, new QCPTextElement(ui->graph_plot, "K73测试项", QFont("sans", 12, QFont::Bold)));
     // set labels:
-    ui->graph_plot->xAxis->setLabel("横坐标");
+    ui->graph_plot->xAxis->setLabel("时间");
     //ui->graph_plot->yAxis->setLabel("Left axis label");
     //ui->graph_plot->xAxis2->setLabel("Top axis label");
     //ui->graph_plot->yAxis2->setLabel("Right axis label");
     // make ticks on bottom axis go outward:
-    ui->graph_plot->xAxis->setTickLength(0, 5);
+    //ui->graph_plot->xAxis->setTickLength(0, 5);
     ui->graph_plot->xAxis->setSubTickLength(0, 3);
     // make ticks on right axis go inward and outward:
-    ui->graph_plot->yAxis2->setTickLength(3, 3);
-    ui->graph_plot->yAxis2->setSubTickLength(1, 1);
+
     // make left and bottom axes transfer their ranges to right and top axes:
     connect(ui->serial_plot->xAxis, SIGNAL(rangeChanged(QCPRange)), ui->serial_plot->xAxis, SLOT(setRange(QCPRange)));
     connect(ui->serial_plot->yAxis, SIGNAL(rangeChanged(QCPRange)), ui->serial_plot->yAxis, SLOT(setRange(QCPRange)));
     productdataTimer= new QTimer(this);
     connect(productdataTimer, SIGNAL(timeout()),this, SLOT(realtimeProductDataSlot()));
-    productdataTimer->start(100);
+    productdataTimer->start(13);
 }
 
 void MainWindow::CreatWaveplot(void)
@@ -1301,10 +1300,10 @@ void MainWindow::realtimeProductDataSlot(void)
     static QTime time(QTime::currentTime());
     double key = time.elapsed()/5000.0;
 
-    //ui->graph_plot->graph(0)->addData(key,qrand()%10);
-    //ui->graph_plot->graph(1)->addData(key,qrand()%20);
-    ui->graph_plot->graph(3)->addData(key,qrand()%6);
-    ui->graph_plot->graph(4)->addData(key,qrand()%5);
+    ui->graph_plot->graph(0)->addData(key,qrand()%200);
+    ui->graph_plot->graph(1)->addData(key,qrand()%15);
+    //ui->graph_plot->graph(3)->addData(key,qrand()%6);
+    //ui->graph_plot->graph(4)->addData(key,qrand()%5);
 
     ui->graph_plot->xAxis->setRange(key, 8, Qt::AlignTrailing);
     ui->graph_plot->xAxis2->setRange(key, 8, Qt::AlignTrailing);
