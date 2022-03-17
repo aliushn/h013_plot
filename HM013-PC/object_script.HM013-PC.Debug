@@ -1,9 +1,7 @@
 INPUT(
 ./debug\appthreadhjw.o
-./debug\callback.o
 ./debug\enterwindow.o
 ./debug\fileprotocolparsehjw.o
-./debug\genericcallback.o
 ./debug\jwfft.o
 ./debug\jwdatabase.o
 ./debug\RadarScanning.o

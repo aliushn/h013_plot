@@ -72,26 +72,59 @@ bool MainWindow::CreateSerialPro(void)
 #define  STR_SIZE_PARSE  (int)7
 void MainWindow::slot_readByteshjw(QByteArray data)
 {
+    QStringList data_list;
 	QString info;
     QDateTime dateTime(QDateTime::currentDateTime());
     QString timeStr = "[" + dateTime.toString(" HH:mm:ss.zzz") + "] ";
     QString tmpStr;
+    bool ok;
     int power=0;
-
     //显示
     static QTime time(QTime::currentTime());
-    double key = time.elapsed()/5000.0;
-
-    if(data.size()<100) return;
-
+    double key = time.elapsed()/500.0;
+    if(data.size()<30) return;
      #define  PRINTF_STRINg  "diff_data:	"
     // TODO
     // 似乎直接用QByteArray无法直接取真正的值
     // 这里先转为数组，再判断，需要优化
     uint8_t *pdata = (uint8_t*)info.data();
     uint8_t buf[255] = {0};
-
     // 根据值判断做逻辑处理，可做成函数
+    ui->serial_plot->xAxis->setRange(key, 8, Qt::AlignRight);
+    if(data.contains("jw-----------> X_Angle:")){
+
+        QRegExp rx("-?(([1-9]\\d*\\.\\d*)|(0\\.\\d*[1-9]\\d*)|([1-9]\\d*))");
+        int p = 0;
+        qDebug() << "begin";
+        while ((p = rx.indexIn(data, p)) != -1)
+        {
+            data_list.append(rx.cap(1));
+            p += rx.matchedLength(); // 上一个匹配的字符串的长度
+        }
+        qDebug() << data_list;
+        qDebug() << "end";
+
+
+        if(data_list.count()==3){
+
+            qDebug() << "x angle "<<data_list.at(0);
+            qDebug() << "y angle "<<data_list.at(1);
+            qDebug() << "z angle "<<data_list.at(2);
+
+            ui->serial_plot->graph(1)->addData(key,double(data_list.at(0).toDouble(&ok)));
+            ui->serial_plot->graph(2)->addData(key,double(data_list.at(1).toDouble(&ok)));
+            ui->serial_plot->graph(3)->addData(key,double(data_list.at(2).toDouble(&ok)));
+        }
+        ui->serial_plot->replot();
+        data_list.clear();
+
+    }
+
+
+
+
+#if 0
+    if(data.size()<100) return;
 
     if(data.contains("jw:rawdata:"))
     {
@@ -291,6 +324,8 @@ void MainWindow::slot_readByteshjw(QByteArray data)
             ui->serial_plot->replot();
         }
     }
+
+#endif
 
     if(data.contains("LocalsysInfo: wear:1"))
     {
@@ -650,7 +685,7 @@ MainWindow::MainWindow(QWidget *parent)
     //setMinimumSize(1737,931);
     //setMaximumSize(1737,931);
     setWindowOpacity(0.90);
-    this->setWindowTitle(tr("K73_小米"));
+    this->setWindowTitle(tr("Blutooth_Tools"));
     connect(timer,SIGNAL(timeout()),this,SLOT(timerUpdate()));
     timer->start(1000);
     //create serial port

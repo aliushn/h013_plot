@@ -50,9 +50,5 @@ int main(int argc, char *argv[])
 
     //setting.remove("name");
 
-
-    //jwFFT fft;
-
-    //fft.test();
    return sdk.exec();
 }

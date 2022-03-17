@@ -1,9 +1,7 @@
 INPUT(
 ./release\appthreadhjw.o
-./release\callback.o
 ./release\enterwindow.o
 ./release\fileprotocolparsehjw.o
-./release\genericcallback.o
 ./release\jwfft.o
 ./release\jwdatabase.o
 ./release\RadarScanning.o

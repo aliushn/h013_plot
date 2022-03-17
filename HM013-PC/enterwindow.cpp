@@ -8,7 +8,7 @@ EnterWindow::EnterWindow(QWidget *parent) :
     ui(new Ui::EnterWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle(tr("k73登录账号"));
+    this->setWindowTitle(tr("登录账号"));
     userok=new bool;
     *userok=false;
 

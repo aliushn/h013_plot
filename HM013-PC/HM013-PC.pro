@@ -34,10 +34,8 @@ DEFINES += QT_DEPRECATED_WARNINGS\
 
 SOURCES += \
     appthreadhjw.cpp \
-    callback.cpp \
     enterwindow.cpp \
     fileprotocolparsehjw.cpp \
-    genericcallback.cpp \
     jwAlgorithm/jwfft.cpp \
     jwDatabase/jwdatabase.cpp \
     jwRadarScanning/RadarScanning.cpp \
@@ -64,10 +62,8 @@ SOURCES += \
 
 HEADERS += \
     appthreadhjw.h \
-    callback.h \
     enterwindow.h \
     fileprotocolparsehjw.h \
-    genericcallback.h \
     jwAlgorithm/jwfft.h \
     jwDatabase/jwdatabase.h \
     jwRadarScanning/RadarScanning.h \
