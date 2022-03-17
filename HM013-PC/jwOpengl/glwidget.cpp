@@ -129,6 +129,12 @@ void GLWidget::mousePressEvent(QMouseEvent *event)
     lastPos = event->pos();
 }
 
+void GLWidget::setxyz(double x,double y,double z)
+{
+    rotateBy(x,y,z);
+}
+
+
 void GLWidget::mouseMoveEvent(QMouseEvent *event)
 {
     int dx = event->x() - lastPos.x();

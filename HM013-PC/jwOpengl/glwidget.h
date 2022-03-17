@@ -70,7 +70,7 @@ public:
     QSize sizeHint() const override;
     void rotateBy(int xAngle, int yAngle, int zAngle);
     void setClearColor(const QColor &color);
-
+    void setxyz(double x,double y,double z);
 signals:
     void clicked();
 

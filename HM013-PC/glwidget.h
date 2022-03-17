@@ -71,6 +71,8 @@ public:
     void rotateBy(int xAngle, int yAngle, int zAngle);
     void setClearColor(const QColor &color);
 
+    void setjwxyz(double x, double y, double z);
+    void setxyz(double x,double y,double z);
 signals:
     void clicked();
 

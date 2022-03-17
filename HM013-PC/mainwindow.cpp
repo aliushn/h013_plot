@@ -104,20 +104,19 @@ void MainWindow::slot_readByteshjw(QByteArray data)
         qDebug() << data_list;
         qDebug() << "end";
 
-
         if(data_list.count()==3){
 
             qDebug() << "x angle "<<data_list.at(0);
             qDebug() << "y angle "<<data_list.at(1);
             qDebug() << "z angle "<<data_list.at(2);
 
+            mopengl->setxyz(data_list.at(0).toDouble(&ok),data_list.at(1).toDouble(&ok),data_list.at(2).toDouble(&ok));
             ui->serial_plot->graph(1)->addData(key,double(data_list.at(0).toDouble(&ok)));
             ui->serial_plot->graph(2)->addData(key,double(data_list.at(1).toDouble(&ok)));
             ui->serial_plot->graph(3)->addData(key,double(data_list.at(2).toDouble(&ok)));
         }
         ui->serial_plot->replot();
         data_list.clear();
-
     }
 
 
