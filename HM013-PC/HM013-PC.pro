@@ -39,7 +39,7 @@ SOURCES += \
     jwAlgorithm/jwfft.cpp \
     jwDatabase/jwdatabase.cpp \
     jwRadarScanning/RadarScanning.cpp \
-    jwserialthread.cpp \
+    jwserial.cpp \
     licensehjw.cpp \
     main.cpp \
     maintable.cpp \
@@ -47,7 +47,6 @@ SOURCES += \
     plothjw.cpp \
     testmodule.cpp \
     xyseriesiodevice.cpp\
-    jwserial.cpp \
     jwplot/jwplot.cpp\
     qcustomplot.cpp\
     jwserialpro.cpp \
@@ -67,7 +66,6 @@ HEADERS += \
     jwAlgorithm/jwfft.h \
     jwDatabase/jwdatabase.h \
     jwRadarScanning/RadarScanning.h \
-    jwserialthread.h \
     licensehjw.h \
     maintable.h \
     jwMusic/jwmusic.h \
@@ -76,7 +74,6 @@ HEADERS += \
     plothjw.h \
     testmodule.h \
     xyseriesiodevice.h\
-    jwserial.h \
     jwplot/jwplot.h\
     qcustomplot.h\
     jwserialpro.h \

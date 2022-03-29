@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../jwRadarScanning/RadarScanning.h"
+#include "../../../git/h013_plot/HM013-PC/jwRadarScanning/RadarScanning.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
