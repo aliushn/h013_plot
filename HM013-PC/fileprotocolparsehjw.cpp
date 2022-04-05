@@ -53,7 +53,7 @@ bool FileProtocolParsehjw::FileOpen(void)
 #else
             QByteArray arry;
             QByteArray arryline;
-            char *ptr;
+            char *ptr=nullptr;
             while(file->atEnd()==false)
             {
 

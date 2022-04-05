@@ -45,5 +45,6 @@ int main(int argc, char *argv[])
     //setting.setValue("name","jw");
     qDebug()<<setting.value("name","").toString();
     //setting.remove("name");
+
     return sdk.exec();
 }

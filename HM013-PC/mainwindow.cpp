@@ -805,7 +805,7 @@ MainWindow::MainWindow(QWidget *parent)
     plot=new Plothjw(inputDevice,ui->widget);
 
 
-   // m_file =new FileProtocolParsehjw;
+    m_file =new FileProtocolParsehjw;
 
     CreatePlot();
 
@@ -1460,6 +1460,25 @@ MainWindow::~MainWindow()
         portThread->quit();
     }
     portThread->wait();
+
+    if(pAnimation!=nullptr){
+        delete pAnimation;
+    }
+
+    if(dataTimer!=nullptr){
+        delete dataTimer;
+    }
+    if(productdataTimer!=nullptr){
+        delete productdataTimer;
+    }
+    if(plot!=nullptr){
+        delete plot;
+    }
+    if(m_file!=nullptr){
+        delete m_file;
+    }
+
+
     delete ui;
 }
 void MainWindow::ThreadTxt(int value)
@@ -1605,13 +1624,13 @@ void MainWindow::on_pushButton_7_clicked()
         mSerialPort.close();
 #endif
         // SerialObject->open(ui->comboBox_7->currentText(),1152000);
-
-        SerialObject->close();
-
-        showMessage("port open.");
-        ui->pushButton_7->setText(tr("打开串口"));
-        //ui->pushButton_7->setIcon(QIcon(":images/notopened.ico"));
-        qDebug()<<"serial open fiale";
+        if(SerialObject->isOpne()){
+            SerialObject->close();
+            showMessage("port open.");
+            ui->pushButton_7->setText(tr("打开串口"));
+            //ui->pushButton_7->setIcon(QIcon(":images/notopened.ico"));
+            qDebug()<<"serial open fiale";
+        }
     }
 }
 

@@ -59,7 +59,7 @@ int jwFFT::get_computation_layers(int num)
 // Param 3: output vector, which is the result of fft
 bool jwFFT::fft(Complex  inVec[], int  const vecLen, Complex  outVec[])
 {
-    char msg[256] = "11111 ";
+    //char msg[256] = "11111 ";
 
     if ((vecLen <= 0) || (NULL == inVec) || (NULL == outVec))
         return false;
@@ -137,7 +137,7 @@ bool jwFFT::fft(Complex  inVec[], int  const vecLen, Complex  outVec[])
 
 bool jwFFT::ifft(Complex  inVec[], int  len, Complex  outVec[])
 {
-    char msg[256] = "11111 ";
+    //char msg[256] = "11111 ";
 
     if ((len <= 0) || (!inVec))
         return false;

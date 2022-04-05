@@ -6,6 +6,7 @@ INPUT(
 ./debug\jwdatabase.o
 ./debug\RadarScanning.o
 ./debug\jwserial.o
+./debug\jwserialthread.o
 ./debug\licensehjw.o
 ./debug\main.o
 ./debug\maintable.o
@@ -27,6 +28,7 @@ INPUT(
 ./debug\moc_jwfft.o
 ./debug\moc_RadarScanning.o
 ./debug\moc_jwserial.o
+./debug\moc_jwserialthread.o
 ./debug\moc_jwmusic.o
 ./debug\moc_mainwindow.o
 ./debug\moc_testmodule.o

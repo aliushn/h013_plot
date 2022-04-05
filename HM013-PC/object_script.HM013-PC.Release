@@ -6,6 +6,7 @@ INPUT(
 ./release\jwdatabase.o
 ./release\RadarScanning.o
 ./release\jwserial.o
+./release\jwserialthread.o
 ./release\licensehjw.o
 ./release\main.o
 ./release\maintable.o
@@ -27,6 +28,7 @@ INPUT(
 ./release\moc_jwfft.o
 ./release\moc_RadarScanning.o
 ./release\moc_jwserial.o
+./release\moc_jwserialthread.o
 ./release\moc_jwmusic.o
 ./release\moc_mainwindow.o
 ./release\moc_testmodule.o

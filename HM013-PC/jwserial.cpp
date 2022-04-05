@@ -104,7 +104,8 @@ void jwSerial::receiveInfo()
 
 void jwSerial::convertStringToHex(const QString &str, QByteArray &byteData)
 {
-
+    Q_UNUSED(str);
+    Q_UNUSED(byteData);
 }
 
 

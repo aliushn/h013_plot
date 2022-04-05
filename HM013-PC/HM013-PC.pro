@@ -16,6 +16,10 @@ QT       += core gui\
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+QMAKE_CXXFLAGS += -Wno-unused-parameter
+
+QMAKE_CXXFLAGS_RELEASE_WITH_DEBUGINFO -= -Zc:strictStrings
+
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -40,6 +44,7 @@ SOURCES += \
     jwDatabase/jwdatabase.cpp \
     jwRadarScanning/RadarScanning.cpp \
     jwserial.cpp \
+    jwserialthread.cpp \
     licensehjw.cpp \
     main.cpp \
     maintable.cpp \
@@ -66,7 +71,9 @@ HEADERS += \
     jwAlgorithm/jwfft.h \
     jwDatabase/jwdatabase.h \
     jwRadarScanning/RadarScanning.h \
+    jwimplot/implot_internal.h \
     jwserial.h \
+    jwserialthread.h \
     licensehjw.h \
     maintable.h \
     jwMusic/jwmusic.h \

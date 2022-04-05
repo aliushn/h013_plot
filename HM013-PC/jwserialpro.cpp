@@ -57,6 +57,7 @@ void jwSerialPro::close()
     }else{
         emit signal_portstatuschange(false);
         emit signal_message(QString("open failed: %d").arg(this->serialport->errorString()));
+        qDebug()<<tr("无串口设备");
     }
  }
 
