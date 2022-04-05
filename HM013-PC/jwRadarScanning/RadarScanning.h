@@ -25,7 +25,7 @@ private:
 	void drawScale(QPainter& pai);
 	void drawLock(QPainter&, PosStruct&);
 
-	int m_r = 0;
+    int m_r = 10;
 	QPixmap* bg;
 
 	QTimer* animation_time = nullptr;

@@ -5,7 +5,7 @@ INPUT(
 ./debug\jwfft.o
 ./debug\jwdatabase.o
 ./debug\RadarScanning.o
-./debug\jwserialthread.o
+./debug\jwserial.o
 ./debug\licensehjw.o
 ./debug\main.o
 ./debug\maintable.o
@@ -13,7 +13,6 @@ INPUT(
 ./debug\plothjw.o
 ./debug\testmodule.o
 ./debug\xyseriesiodevice.o
-./debug\jwserial.o
 ./debug\jwplot.o
 ./debug\qcustomplot.o
 ./debug\jwserialpro.o
@@ -27,12 +26,11 @@ INPUT(
 ./debug\moc_enterwindow.o
 ./debug\moc_jwfft.o
 ./debug\moc_RadarScanning.o
-./debug\moc_jwserialthread.o
+./debug\moc_jwserial.o
 ./debug\moc_jwmusic.o
 ./debug\moc_mainwindow.o
 ./debug\moc_testmodule.o
 ./debug\moc_xyseriesiodevice.o
-./debug\moc_jwserial.o
 ./debug\moc_qcustomplot.o
 ./debug\moc_jwserialpro.o
 ./debug\moc_waterprogressbar.o

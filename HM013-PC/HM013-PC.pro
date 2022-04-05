@@ -66,6 +66,7 @@ HEADERS += \
     jwAlgorithm/jwfft.h \
     jwDatabase/jwdatabase.h \
     jwRadarScanning/RadarScanning.h \
+    jwserial.h \
     licensehjw.h \
     maintable.h \
     jwMusic/jwmusic.h \

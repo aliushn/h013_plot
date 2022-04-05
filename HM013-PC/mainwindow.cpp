@@ -51,6 +51,8 @@ bool MainWindow::CreateSerialPro(void)
 {
     portThread=new QThread();
     SerialObject=new jwSerialPro();
+    qDebug()<<"CreateSerialPro";
+
     SerialObject->moveToThread(portThread);
     connect(SerialObject,SIGNAL(signal_message(QString)),this,SLOT(slot_message(QString)));
     connect(SerialObject,SIGNAL(signal_deleteportobject()),portThread,SLOT(quit()));
@@ -802,15 +804,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->widget->show();
     plot=new Plothjw(inputDevice,ui->widget);
 
-    //USB handle
-    //USBHIDHJW hjw;
-    m_file =new FileProtocolParsehjw;
-    //pMainThread =new QThreadPool;
-    //pMainThread->setMaxThreadCount(10);
-    //for(int i=0;i<10;i++){
-        //m_serial->setAutoDelete(true);
-        //pMainThread->start(m_serial);
-    //}
+
+   // m_file =new FileProtocolParsehjw;
 
     CreatePlot();
 
@@ -869,8 +864,8 @@ MainWindow::MainWindow(QWidget *parent)
     CreateRadarScanning(this);
 
     //创建单元测试
-    mtestNoudle=new TestModule;
-    mtestNoudle->setWindowTitle(tr("TesrModle"));
+    //mtestNoudle=new TestModule;
+    //mtestNoudle->setWindowTitle(tr("TesrModle"));
 }
 
 

@@ -28,13 +28,11 @@
 
 int main(int argc, char *argv[])
 {
-
     QApplication sdk(argc, argv);
-
     QFile file(":black.qss"); // 指定路径
-        if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            sdk.setStyleSheet(file.readAll());
-            file.close();
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    sdk.setStyleSheet(file.readAll());
+    file.close();
     }
     EnterWindow enterw;
     enterw.show();
@@ -45,10 +43,7 @@ int main(int argc, char *argv[])
     //add
     QSettings setting(HKEY_CURRENT_USE_QT,QSettings::NativeFormat);
     //setting.setValue("name","jw");
-
     qDebug()<<setting.value("name","").toString();
-
     //setting.remove("name");
-
-   return sdk.exec();
+    return sdk.exec();
 }

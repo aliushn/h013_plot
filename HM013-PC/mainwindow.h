@@ -222,9 +222,9 @@ public :
 private:
     QTimer *timer;
     Ui::MainWindow *ui;
-    QPropertyAnimation   *pAnimation;
+    QPropertyAnimation   *pAnimation=nullptr;
     ///////////////////////////////
-    Plothjw              *plot;
+    Plothjw              *plot=nullptr;
     FileProtocolParsehjw *m_file;
 
     QTimer*         dataTimer;
@@ -247,8 +247,8 @@ private:
 
     ///////////////////////////////////////////////////
     //创建串口
-    QThread* portThread;
-    jwSerialPro* SerialObject;
+    QThread* portThread=nullptr;
+    jwSerialPro* SerialObject=nullptr;
 
     ////////////////////////////////////////////////////
     //压感阀值
@@ -256,7 +256,7 @@ private:
     Licensehjw lincese;
 
     //创建opengl
-    GLWidget *mopengl;
+    GLWidget *mopengl=nullptr;
 
     //创建雷达扫描
     RadarScanning *mRadarScanning;
