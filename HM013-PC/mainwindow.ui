@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1581</width>
-    <height>878</height>
+    <width>1710</width>
+    <height>949</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,16 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_3">
+    <item row="1" column="0">
+     <widget class="QTextBrowser" name="textBrowser_7">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="enabled">
@@ -1182,10 +1192,10 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="pushButton_19">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>20</y>
+          <x>0</x>
+          <y>10</y>
           <width>91</width>
-          <height>61</height>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1198,10 +1208,10 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="pushButton_20">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>120</y>
+          <x>0</x>
+          <y>80</y>
           <width>91</width>
-          <height>61</height>
+          <height>51</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1214,8 +1224,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QPushButton" name="pushButton_21">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>210</y>
+          <x>0</x>
+          <y>150</y>
           <width>91</width>
           <height>61</height>
          </rect>
@@ -1230,13 +1240,20 @@ p, li { white-space: pre-wrap; }
        <widget class="QWidget" name="horizontalLayoutWidget_11">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>20</y>
-          <width>1331</width>
-          <height>481</height>
+          <x>100</x>
+          <y>10</y>
+          <width>1581</width>
+          <height>491</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,1">
+         <item>
+          <widget class="GLWidget" name="openGLWidget">
+           <property name="styleSheet">
+            <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QWidget" name="widget_2" native="true">
            <property name="sizePolicy">
@@ -1248,19 +1265,6 @@ p, li { white-space: pre-wrap; }
            <property name="styleSheet">
             <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
            </property>
-           <widget class="GLWidget" name="openGLWidget">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>10</y>
-              <width>649</width>
-              <height>479</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
-            </property>
-           </widget>
           </widget>
          </item>
         </layout>
@@ -1268,10 +1272,10 @@ p, li { white-space: pre-wrap; }
        <widget class="QWidget" name="verticalLayoutWidget_10">
         <property name="geometry">
          <rect>
-          <x>1450</x>
-          <y>20</y>
-          <width>182</width>
-          <height>59</height>
+          <x>0</x>
+          <y>220</y>
+          <width>91</width>
+          <height>91</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
@@ -1329,16 +1333,6 @@ p, li { white-space: pre-wrap; }
         </layout>
        </widget>
       </widget>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QTextBrowser" name="textBrowser_7">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
      </widget>
     </item>
    </layout>
@@ -1418,9 +1412,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>lineEdit_7</tabstop>
   <tabstop>pushButton_17</tabstop>
   <tabstop>textEdit_3</tabstop>
-  <tabstop>pushButton_19</tabstop>
-  <tabstop>pushButton_20</tabstop>
-  <tabstop>pushButton_21</tabstop>
   <tabstop>pushButton_22</tabstop>
   <tabstop>pushButton_23</tabstop>
   <tabstop>pushButton_24</tabstop>

@@ -47,6 +47,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout_3;
+    QTextBrowser *textBrowser_7;
     QTabWidget *tabWidget;
     QWidget *tab;
     QTextBrowser *textBrowser;
@@ -203,8 +204,8 @@ public:
     QPushButton *pushButton_21;
     QWidget *horizontalLayoutWidget_11;
     QHBoxLayout *horizontalLayout_15;
-    QWidget *widget_2;
     GLWidget *openGLWidget;
+    QWidget *widget_2;
     QWidget *verticalLayoutWidget_10;
     QGridLayout *gridLayout_2;
     QPushButton *pushButton_18;
@@ -213,7 +214,6 @@ public:
     QPushButton *pushButton_23;
     QPushButton *pushButton_24;
     QPushButton *pushButton_25;
-    QTextBrowser *textBrowser_7;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -221,20 +221,30 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(1581, 878);
+        MainWindow->resize(1710, 949);
         MainWindow->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayout_3 = new QGridLayout(centralwidget);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        textBrowser_7 = new QTextBrowser(centralwidget);
+        textBrowser_7->setObjectName(QStringLiteral("textBrowser_7"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(textBrowser_7->sizePolicy().hasHeightForWidth());
+        textBrowser_7->setSizePolicy(sizePolicy);
+
+        gridLayout_3->addWidget(textBrowser_7, 1, 0, 1, 1);
+
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setEnabled(true);
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
-        tabWidget->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
+        tabWidget->setSizePolicy(sizePolicy1);
         tabWidget->setMaximumSize(QSize(16777215, 100000));
         tabWidget->setToolTipDuration(-3);
         tabWidget->setMovable(false);
@@ -907,37 +917,41 @@ public:
         tab_6->setObjectName(QStringLiteral("tab_6"));
         pushButton_19 = new QPushButton(tab_6);
         pushButton_19->setObjectName(QStringLiteral("pushButton_19"));
-        pushButton_19->setGeometry(QRect(10, 20, 91, 61));
+        pushButton_19->setGeometry(QRect(0, 10, 91, 51));
         pushButton_19->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
         pushButton_20 = new QPushButton(tab_6);
         pushButton_20->setObjectName(QStringLiteral("pushButton_20"));
-        pushButton_20->setGeometry(QRect(10, 120, 91, 61));
+        pushButton_20->setGeometry(QRect(0, 80, 91, 51));
         pushButton_20->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
         pushButton_21 = new QPushButton(tab_6);
         pushButton_21->setObjectName(QStringLiteral("pushButton_21"));
-        pushButton_21->setGeometry(QRect(10, 210, 91, 61));
+        pushButton_21->setGeometry(QRect(0, 150, 91, 61));
         pushButton_21->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
         horizontalLayoutWidget_11 = new QWidget(tab_6);
         horizontalLayoutWidget_11->setObjectName(QStringLiteral("horizontalLayoutWidget_11"));
-        horizontalLayoutWidget_11->setGeometry(QRect(110, 20, 1331, 481));
+        horizontalLayoutWidget_11->setGeometry(QRect(100, 10, 1581, 491));
         horizontalLayout_15 = new QHBoxLayout(horizontalLayoutWidget_11);
         horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
         horizontalLayout_15->setContentsMargins(0, 0, 0, 0);
+        openGLWidget = new GLWidget(horizontalLayoutWidget_11);
+        openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
+        openGLWidget->setStyleSheet(QStringLiteral("background-image: url(:/Image/worldmap.jpg);"));
+
+        horizontalLayout_15->addWidget(openGLWidget);
+
         widget_2 = new QWidget(horizontalLayoutWidget_11);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        sizePolicy.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
-        widget_2->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
+        widget_2->setSizePolicy(sizePolicy1);
         widget_2->setStyleSheet(QStringLiteral("background-image: url(:/Image/worldmap.jpg);"));
-        openGLWidget = new GLWidget(widget_2);
-        openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
-        openGLWidget->setGeometry(QRect(0, 10, 649, 479));
-        openGLWidget->setStyleSheet(QStringLiteral("background-image: url(:/Image/worldmap.jpg);"));
 
         horizontalLayout_15->addWidget(widget_2);
 
+        horizontalLayout_15->setStretch(0, 1);
+        horizontalLayout_15->setStretch(1, 1);
         verticalLayoutWidget_10 = new QWidget(tab_6);
         verticalLayoutWidget_10->setObjectName(QStringLiteral("verticalLayoutWidget_10"));
-        verticalLayoutWidget_10->setGeometry(QRect(1450, 20, 182, 59));
+        verticalLayoutWidget_10->setGeometry(QRect(0, 220, 91, 91));
         gridLayout_2 = new QGridLayout(verticalLayoutWidget_10);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -978,16 +992,6 @@ public:
         tabWidget->addTab(tab_6, QString());
 
         gridLayout_3->addWidget(tabWidget, 0, 0, 1, 1);
-
-        textBrowser_7 = new QTextBrowser(centralwidget);
-        textBrowser_7->setObjectName(QStringLiteral("textBrowser_7"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(textBrowser_7->sizePolicy().hasHeightForWidth());
-        textBrowser_7->setSizePolicy(sizePolicy1);
-
-        gridLayout_3->addWidget(textBrowser_7, 1, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -1051,10 +1055,7 @@ public:
         QWidget::setTabOrder(lineEdit_6, lineEdit_7);
         QWidget::setTabOrder(lineEdit_7, pushButton_17);
         QWidget::setTabOrder(pushButton_17, textEdit_3);
-        QWidget::setTabOrder(textEdit_3, pushButton_19);
-        QWidget::setTabOrder(pushButton_19, pushButton_20);
-        QWidget::setTabOrder(pushButton_20, pushButton_21);
-        QWidget::setTabOrder(pushButton_21, pushButton_22);
+        QWidget::setTabOrder(textEdit_3, pushButton_22);
         QWidget::setTabOrder(pushButton_22, pushButton_23);
         QWidget::setTabOrder(pushButton_23, pushButton_24);
         QWidget::setTabOrder(pushButton_24, pushButton_25);
