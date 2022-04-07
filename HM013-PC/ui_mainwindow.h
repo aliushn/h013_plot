@@ -199,14 +199,13 @@ public:
     QPushButton *pushButton_17;
     QTextEdit *textEdit_3;
     QWidget *tab_6;
-    QPushButton *pushButton_19;
-    QPushButton *pushButton_20;
+    QGridLayout *gridLayout_4;
     QPushButton *pushButton_21;
-    QWidget *horizontalLayoutWidget_11;
     QHBoxLayout *horizontalLayout_15;
     GLWidget *openGLWidget;
+    QSpacerItem *verticalSpacer_3;
     QWidget *widget_2;
-    QWidget *verticalLayoutWidget_10;
+    QPushButton *pushButton_20;
     QGridLayout *gridLayout_2;
     QPushButton *pushButton_18;
     QHBoxLayout *horizontalLayout_14;
@@ -214,6 +213,7 @@ public:
     QPushButton *pushButton_23;
     QPushButton *pushButton_24;
     QPushButton *pushButton_25;
+    QPushButton *pushButton_19;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -221,7 +221,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(1710, 949);
+        MainWindow->resize(1659, 970);
         MainWindow->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
@@ -915,31 +915,28 @@ public:
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
-        pushButton_19 = new QPushButton(tab_6);
-        pushButton_19->setObjectName(QStringLiteral("pushButton_19"));
-        pushButton_19->setGeometry(QRect(0, 10, 91, 51));
-        pushButton_19->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
-        pushButton_20 = new QPushButton(tab_6);
-        pushButton_20->setObjectName(QStringLiteral("pushButton_20"));
-        pushButton_20->setGeometry(QRect(0, 80, 91, 51));
-        pushButton_20->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
+        gridLayout_4 = new QGridLayout(tab_6);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         pushButton_21 = new QPushButton(tab_6);
         pushButton_21->setObjectName(QStringLiteral("pushButton_21"));
-        pushButton_21->setGeometry(QRect(0, 150, 91, 61));
         pushButton_21->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
-        horizontalLayoutWidget_11 = new QWidget(tab_6);
-        horizontalLayoutWidget_11->setObjectName(QStringLiteral("horizontalLayoutWidget_11"));
-        horizontalLayoutWidget_11->setGeometry(QRect(100, 10, 1581, 491));
-        horizontalLayout_15 = new QHBoxLayout(horizontalLayoutWidget_11);
+
+        gridLayout_4->addWidget(pushButton_21, 2, 0, 1, 1);
+
+        horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
-        horizontalLayout_15->setContentsMargins(0, 0, 0, 0);
-        openGLWidget = new GLWidget(horizontalLayoutWidget_11);
+        horizontalLayout_15->setSizeConstraint(QLayout::SetMaximumSize);
+        openGLWidget = new GLWidget(tab_6);
         openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
         openGLWidget->setStyleSheet(QStringLiteral("background-image: url(:/Image/worldmap.jpg);"));
 
         horizontalLayout_15->addWidget(openGLWidget);
 
-        widget_2 = new QWidget(horizontalLayoutWidget_11);
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        horizontalLayout_15->addItem(verticalSpacer_3);
+
+        widget_2 = new QWidget(tab_6);
         widget_2->setObjectName(QStringLiteral("widget_2"));
         sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
         widget_2->setSizePolicy(sizePolicy1);
@@ -948,39 +945,44 @@ public:
         horizontalLayout_15->addWidget(widget_2);
 
         horizontalLayout_15->setStretch(0, 1);
-        horizontalLayout_15->setStretch(1, 1);
-        verticalLayoutWidget_10 = new QWidget(tab_6);
-        verticalLayoutWidget_10->setObjectName(QStringLiteral("verticalLayoutWidget_10"));
-        verticalLayoutWidget_10->setGeometry(QRect(0, 220, 91, 91));
-        gridLayout_2 = new QGridLayout(verticalLayoutWidget_10);
+        horizontalLayout_15->setStretch(2, 1);
+
+        gridLayout_4->addLayout(horizontalLayout_15, 0, 1, 4, 1);
+
+        pushButton_20 = new QPushButton(tab_6);
+        pushButton_20->setObjectName(QStringLiteral("pushButton_20"));
+        pushButton_20->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
+
+        gridLayout_4->addWidget(pushButton_20, 1, 0, 1, 1);
+
+        gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_18 = new QPushButton(verticalLayoutWidget_10);
+        pushButton_18 = new QPushButton(tab_6);
         pushButton_18->setObjectName(QStringLiteral("pushButton_18"));
 
         gridLayout_2->addWidget(pushButton_18, 2, 0, 1, 1);
 
         horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setObjectName(QStringLiteral("horizontalLayout_14"));
-        pushButton_22 = new QPushButton(verticalLayoutWidget_10);
+        pushButton_22 = new QPushButton(tab_6);
         pushButton_22->setObjectName(QStringLiteral("pushButton_22"));
         pushButton_22->setStyleSheet(QStringLiteral("border-image: url(:/Image/icon/select_t.png);"));
 
         horizontalLayout_14->addWidget(pushButton_22);
 
-        pushButton_23 = new QPushButton(verticalLayoutWidget_10);
+        pushButton_23 = new QPushButton(tab_6);
         pushButton_23->setObjectName(QStringLiteral("pushButton_23"));
         pushButton_23->setStyleSheet(QStringLiteral("border-image: url(:/Image/icon/window_t.png);"));
 
         horizontalLayout_14->addWidget(pushButton_23);
 
-        pushButton_24 = new QPushButton(verticalLayoutWidget_10);
+        pushButton_24 = new QPushButton(tab_6);
         pushButton_24->setObjectName(QStringLiteral("pushButton_24"));
         pushButton_24->setStyleSheet(QStringLiteral("border-image: url(:/Image/icon/load_t.png);"));
 
         horizontalLayout_14->addWidget(pushButton_24);
 
-        pushButton_25 = new QPushButton(verticalLayoutWidget_10);
+        pushButton_25 = new QPushButton(tab_6);
         pushButton_25->setObjectName(QStringLiteral("pushButton_25"));
         pushButton_25->setStyleSheet(QStringLiteral("border-image: url(:/Image/icon/full_t.png);"));
 
@@ -988,6 +990,15 @@ public:
 
 
         gridLayout_2->addLayout(horizontalLayout_14, 1, 0, 1, 1);
+
+
+        gridLayout_4->addLayout(gridLayout_2, 3, 0, 1, 1);
+
+        pushButton_19 = new QPushButton(tab_6);
+        pushButton_19->setObjectName(QStringLiteral("pushButton_19"));
+        pushButton_19->setStyleSheet(QStringLiteral("background-image: url(:/Image/air.png);"));
+
+        gridLayout_4->addWidget(pushButton_19, 0, 0, 1, 1);
 
         tabWidget->addTab(tab_6, QString());
 
@@ -1212,14 +1223,14 @@ public:
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun';\">\350\276\223\345\205\245\345\216\213\346\265\213\346\254\241\346\225\260</span></p></body></html>", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "\347\212\266\346\200\201", Q_NULLPTR));
-        pushButton_19->setText(QString());
-        pushButton_20->setText(QString());
         pushButton_21->setText(QString());
+        pushButton_20->setText(QString());
         pushButton_18->setText(QApplication::translate("MainWindow", "\345\212\240\351\200\237\345\272\246", Q_NULLPTR));
         pushButton_22->setText(QString());
         pushButton_23->setText(QString());
         pushButton_24->setText(QString());
         pushButton_25->setText(QString());
+        pushButton_19->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "\351\231\200\350\236\272\344\273\252", Q_NULLPTR));
     } // retranslateUi
 
