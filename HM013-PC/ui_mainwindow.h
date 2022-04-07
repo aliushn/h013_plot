@@ -17,6 +17,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDial>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
@@ -44,6 +45,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
+    QFormLayout *formLayout_2;
     QTabWidget *tabWidget;
     QWidget *tab;
     QTextBrowser *textBrowser;
@@ -107,10 +109,10 @@ public:
     QTextEdit *textEdit_2;
     QPushButton *pushButton_5;
     QWidget *tab_3;
+    QGridLayout *gridLayout;
     QCustomPlot *serial_plot;
-    QTextBrowser *textBrowser_3;
-    QLabel *label_14;
-    QWidget *formLayoutWidget;
+    QLabel *label_16;
+    QLabel *label_17;
     QFormLayout *formLayout;
     QLabel *label_15;
     QComboBox *comboBox_7;
@@ -124,53 +126,47 @@ public:
     QComboBox *comboBox_4;
     QComboBox *comboBox_5;
     QComboBox *comboBox_6;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *horizontalLayout;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_8;
-    QPushButton *pushButton_9;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_11;
-    QPushButton *pushButton_10;
-    QPlainTextEdit *serialSendWindow;
-    QCheckBox *checkSendHexBox;
-    QCheckBox *checkRecHexBox;
-    QLabel *label_16;
-    QLabel *label_17;
-    QWidget *verticalLayoutWidget_4;
     QVBoxLayout *verticalLayout_4;
     QLabel *label_19;
     QLabel *label_18;
     QLabel *label_20;
     QLabel *label_21;
-    QWidget *verticalLayoutWidget_5;
     QVBoxLayout *verticalLayout_5;
     QLabel *label_25;
     QLabel *label_22;
     QLabel *label_24;
     QLabel *label_23;
-    QWidget *verticalLayoutWidget_11;
     QVBoxLayout *verticalLayout_11;
     QLabel *label_26;
     QLabel *label_27;
     QLabel *label_28;
     QLabel *label_29;
-    QLabel *label_58;
-    QLabel *label_59;
-    QProgressBar *progressBar_3;
-    QProgressBar *progressBar_4;
-    QLabel *label_60;
-    QLabel *label_61;
-    QDial *dial_9;
-    QLabel *label_62;
-    QLCDNumber *lcdNumber_19;
-    QWidget *verticalLayoutWidget_6;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
+    QCheckBox *checkSendHexBox;
+    QCheckBox *checkRecHexBox;
     QVBoxLayout *verticalLayout_6;
     QCheckBox *checkBox_first;
     QCheckBox *checkBox_sencond;
     QCheckBox *checkBox_third;
     QCheckBox *checkBox_four;
+    QPlainTextEdit *serialSendWindow;
+    QPushButton *pushButton_9;
+    QVBoxLayout *verticalLayout;
+    QPushButton *pushButton_11;
+    QPushButton *pushButton_10;
+    QTextBrowser *textBrowser_3;
+    QLabel *label_62;
+    QLabel *label_60;
+    QLabel *label_61;
+    QDial *dial_9;
+    QLabel *label_58;
+    QProgressBar *progressBar_3;
+    QLabel *label_59;
+    QProgressBar *progressBar_4;
+    QLCDNumber *lcdNumber_19;
+    QLabel *label_14;
     QWidget *tab_4;
     QCustomPlot *graph_plot;
     QDial *dial_10;
@@ -207,8 +203,8 @@ public:
     QPushButton *pushButton_23;
     QPushButton *pushButton_24;
     QPushButton *pushButton_25;
-    QLabel *label_3;
     QTextBrowser *textBrowser_7;
+    QLabel *label_3;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -220,10 +216,11 @@ public:
         MainWindow->setDockOptions(QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        formLayout_2 = new QFormLayout(centralwidget);
+        formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tabWidget->setEnabled(true);
-        tabWidget->setGeometry(QRect(0, 0, 1741, 781));
         tabWidget->setToolTipDuration(-3);
         tabWidget->setMovable(false);
         tab = new QWidget();
@@ -483,269 +480,300 @@ public:
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
+        gridLayout = new QGridLayout(tab_3);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         serial_plot = new QCustomPlot(tab_3);
         serial_plot->setObjectName(QStringLiteral("serial_plot"));
         serial_plot->setEnabled(true);
-        serial_plot->setGeometry(QRect(10, 30, 1111, 461));
-        textBrowser_3 = new QTextBrowser(tab_3);
-        textBrowser_3->setObjectName(QStringLiteral("textBrowser_3"));
-        textBrowser_3->setEnabled(true);
-        textBrowser_3->setGeometry(QRect(10, 510, 1111, 201));
-        label_14 = new QLabel(tab_3);
-        label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(10, 720, 131, 21));
-        formLayoutWidget = new QWidget(tab_3);
-        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(1410, 0, 311, 200));
-        formLayout = new QFormLayout(formLayoutWidget);
+
+        gridLayout->addWidget(serial_plot, 0, 0, 6, 1);
+
+        label_16 = new QLabel(tab_3);
+        label_16->setObjectName(QStringLiteral("label_16"));
+
+        gridLayout->addWidget(label_16, 0, 2, 1, 2);
+
+        label_17 = new QLabel(tab_3);
+        label_17->setObjectName(QStringLiteral("label_17"));
+
+        gridLayout->addWidget(label_17, 0, 4, 1, 2);
+
+        formLayout = new QFormLayout();
         formLayout->setObjectName(QStringLiteral("formLayout"));
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        label_15 = new QLabel(formLayoutWidget);
+        label_15 = new QLabel(tab_3);
         label_15->setObjectName(QStringLiteral("label_15"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_15);
 
-        comboBox_7 = new QComboBox(formLayoutWidget);
+        comboBox_7 = new QComboBox(tab_3);
         comboBox_7->setObjectName(QStringLiteral("comboBox_7"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, comboBox_7);
 
-        label_9 = new QLabel(formLayoutWidget);
+        label_9 = new QLabel(tab_3);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_9);
 
-        comboBox_2 = new QComboBox(formLayoutWidget);
+        comboBox_2 = new QComboBox(tab_3);
         comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, comboBox_2);
 
-        label_10 = new QLabel(formLayoutWidget);
+        label_10 = new QLabel(tab_3);
         label_10->setObjectName(QStringLiteral("label_10"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_10);
 
-        label_11 = new QLabel(formLayoutWidget);
+        label_11 = new QLabel(tab_3);
         label_11->setObjectName(QStringLiteral("label_11"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_11);
 
-        label_12 = new QLabel(formLayoutWidget);
+        label_12 = new QLabel(tab_3);
         label_12->setObjectName(QStringLiteral("label_12"));
 
         formLayout->setWidget(4, QFormLayout::LabelRole, label_12);
 
-        label_13 = new QLabel(formLayoutWidget);
+        label_13 = new QLabel(tab_3);
         label_13->setObjectName(QStringLiteral("label_13"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, label_13);
 
-        comboBox_3 = new QComboBox(formLayoutWidget);
+        comboBox_3 = new QComboBox(tab_3);
         comboBox_3->setObjectName(QStringLiteral("comboBox_3"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, comboBox_3);
 
-        comboBox_4 = new QComboBox(formLayoutWidget);
+        comboBox_4 = new QComboBox(tab_3);
         comboBox_4->setObjectName(QStringLiteral("comboBox_4"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, comboBox_4);
 
-        comboBox_5 = new QComboBox(formLayoutWidget);
+        comboBox_5 = new QComboBox(tab_3);
         comboBox_5->setObjectName(QStringLiteral("comboBox_5"));
 
         formLayout->setWidget(4, QFormLayout::FieldRole, comboBox_5);
 
-        comboBox_6 = new QComboBox(formLayoutWidget);
+        comboBox_6 = new QComboBox(tab_3);
         comboBox_6->setObjectName(QStringLiteral("comboBox_6"));
 
         formLayout->setWidget(5, QFormLayout::FieldRole, comboBox_6);
 
-        horizontalLayoutWidget = new QWidget(tab_3);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(1410, 180, 311, 41));
-        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_7 = new QPushButton(horizontalLayoutWidget);
-        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
 
-        horizontalLayout->addWidget(pushButton_7);
+        gridLayout->addLayout(formLayout, 0, 6, 2, 3);
 
-        pushButton_8 = new QPushButton(horizontalLayoutWidget);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-
-        horizontalLayout->addWidget(pushButton_8);
-
-        pushButton_9 = new QPushButton(tab_3);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        pushButton_9->setGeometry(QRect(1410, 390, 93, 28));
-        verticalLayoutWidget = new QWidget(tab_3);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(1560, 390, 160, 66));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_11 = new QPushButton(verticalLayoutWidget);
-        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
-
-        verticalLayout->addWidget(pushButton_11);
-
-        pushButton_10 = new QPushButton(verticalLayoutWidget);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-
-        verticalLayout->addWidget(pushButton_10);
-
-        serialSendWindow = new QPlainTextEdit(tab_3);
-        serialSendWindow->setObjectName(QStringLiteral("serialSendWindow"));
-        serialSendWindow->setGeometry(QRect(1410, 280, 311, 101));
-        checkSendHexBox = new QCheckBox(tab_3);
-        checkSendHexBox->setObjectName(QStringLiteral("checkSendHexBox"));
-        checkSendHexBox->setGeometry(QRect(1420, 230, 131, 31));
-        checkRecHexBox = new QCheckBox(tab_3);
-        checkRecHexBox->setObjectName(QStringLiteral("checkRecHexBox"));
-        checkRecHexBox->setGeometry(QRect(1580, 230, 141, 31));
-        label_16 = new QLabel(tab_3);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(1220, 20, 72, 15));
-        label_17 = new QLabel(tab_3);
-        label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(1310, 20, 72, 15));
-        verticalLayoutWidget_4 = new QWidget(tab_3);
-        verticalLayoutWidget_4->setObjectName(QStringLiteral("verticalLayoutWidget_4"));
-        verticalLayoutWidget_4->setGeometry(QRect(1130, 50, 91, 231));
-        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_4);
+        verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_19 = new QLabel(verticalLayoutWidget_4);
+        label_19 = new QLabel(tab_3);
         label_19->setObjectName(QStringLiteral("label_19"));
 
         verticalLayout_4->addWidget(label_19);
 
-        label_18 = new QLabel(verticalLayoutWidget_4);
+        label_18 = new QLabel(tab_3);
         label_18->setObjectName(QStringLiteral("label_18"));
 
         verticalLayout_4->addWidget(label_18);
 
-        label_20 = new QLabel(verticalLayoutWidget_4);
+        label_20 = new QLabel(tab_3);
         label_20->setObjectName(QStringLiteral("label_20"));
 
         verticalLayout_4->addWidget(label_20);
 
-        label_21 = new QLabel(verticalLayoutWidget_4);
+        label_21 = new QLabel(tab_3);
         label_21->setObjectName(QStringLiteral("label_21"));
 
         verticalLayout_4->addWidget(label_21);
 
-        verticalLayoutWidget_5 = new QWidget(tab_3);
-        verticalLayoutWidget_5->setObjectName(QStringLiteral("verticalLayoutWidget_5"));
-        verticalLayoutWidget_5->setGeometry(QRect(1230, 50, 61, 231));
-        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_5);
+
+        gridLayout->addLayout(verticalLayout_4, 1, 1, 3, 1);
+
+        verticalLayout_5 = new QVBoxLayout();
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_25 = new QLabel(verticalLayoutWidget_5);
+        label_25 = new QLabel(tab_3);
         label_25->setObjectName(QStringLiteral("label_25"));
 
         verticalLayout_5->addWidget(label_25);
 
-        label_22 = new QLabel(verticalLayoutWidget_5);
+        label_22 = new QLabel(tab_3);
         label_22->setObjectName(QStringLiteral("label_22"));
 
         verticalLayout_5->addWidget(label_22);
 
-        label_24 = new QLabel(verticalLayoutWidget_5);
+        label_24 = new QLabel(tab_3);
         label_24->setObjectName(QStringLiteral("label_24"));
 
         verticalLayout_5->addWidget(label_24);
 
-        label_23 = new QLabel(verticalLayoutWidget_5);
+        label_23 = new QLabel(tab_3);
         label_23->setObjectName(QStringLiteral("label_23"));
 
         verticalLayout_5->addWidget(label_23);
 
-        verticalLayoutWidget_11 = new QWidget(tab_3);
-        verticalLayoutWidget_11->setObjectName(QStringLiteral("verticalLayoutWidget_11"));
-        verticalLayoutWidget_11->setGeometry(QRect(1310, 50, 71, 231));
-        verticalLayout_11 = new QVBoxLayout(verticalLayoutWidget_11);
+
+        gridLayout->addLayout(verticalLayout_5, 1, 2, 3, 2);
+
+        verticalLayout_11 = new QVBoxLayout();
         verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
-        verticalLayout_11->setContentsMargins(0, 0, 0, 0);
-        label_26 = new QLabel(verticalLayoutWidget_11);
+        label_26 = new QLabel(tab_3);
         label_26->setObjectName(QStringLiteral("label_26"));
 
         verticalLayout_11->addWidget(label_26);
 
-        label_27 = new QLabel(verticalLayoutWidget_11);
+        label_27 = new QLabel(tab_3);
         label_27->setObjectName(QStringLiteral("label_27"));
 
         verticalLayout_11->addWidget(label_27);
 
-        label_28 = new QLabel(verticalLayoutWidget_11);
+        label_28 = new QLabel(tab_3);
         label_28->setObjectName(QStringLiteral("label_28"));
 
         verticalLayout_11->addWidget(label_28);
 
-        label_29 = new QLabel(verticalLayoutWidget_11);
+        label_29 = new QLabel(tab_3);
         label_29->setObjectName(QStringLiteral("label_29"));
 
         verticalLayout_11->addWidget(label_29);
 
-        label_58 = new QLabel(tab_3);
-        label_58->setObjectName(QStringLiteral("label_58"));
-        label_58->setGeometry(QRect(1270, 610, 72, 21));
-        label_59 = new QLabel(tab_3);
-        label_59->setObjectName(QStringLiteral("label_59"));
-        label_59->setGeometry(QRect(1270, 660, 72, 31));
-        progressBar_3 = new QProgressBar(tab_3);
-        progressBar_3->setObjectName(QStringLiteral("progressBar_3"));
-        progressBar_3->setGeometry(QRect(1350, 610, 118, 23));
-        progressBar_3->setValue(24);
-        progressBar_4 = new QProgressBar(tab_3);
-        progressBar_4->setObjectName(QStringLiteral("progressBar_4"));
-        progressBar_4->setGeometry(QRect(1350, 660, 118, 23));
-        progressBar_4->setValue(24);
-        label_60 = new QLabel(tab_3);
-        label_60->setObjectName(QStringLiteral("label_60"));
-        label_60->setGeometry(QRect(1260, 530, 91, 31));
-        label_61 = new QLabel(tab_3);
-        label_61->setObjectName(QStringLiteral("label_61"));
-        label_61->setGeometry(QRect(1410, 530, 101, 31));
-        dial_9 = new QDial(tab_3);
-        dial_9->setObjectName(QStringLiteral("dial_9"));
-        dial_9->setGeometry(QRect(1550, 530, 161, 111));
-        label_62 = new QLabel(tab_3);
-        label_62->setObjectName(QStringLiteral("label_62"));
-        label_62->setGeometry(QRect(1540, 500, 181, 21));
-        lcdNumber_19 = new QLCDNumber(tab_3);
-        lcdNumber_19->setObjectName(QStringLiteral("lcdNumber_19"));
-        lcdNumber_19->setGeometry(QRect(1560, 650, 131, 23));
-        verticalLayoutWidget_6 = new QWidget(tab_3);
-        verticalLayoutWidget_6->setObjectName(QStringLiteral("verticalLayoutWidget_6"));
-        verticalLayoutWidget_6->setGeometry(QRect(1130, 290, 121, 421));
-        verticalLayout_6 = new QVBoxLayout(verticalLayoutWidget_6);
+
+        gridLayout->addLayout(verticalLayout_11, 1, 4, 3, 2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        pushButton_7 = new QPushButton(tab_3);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+
+        horizontalLayout->addWidget(pushButton_7);
+
+        pushButton_8 = new QPushButton(tab_3);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+
+        horizontalLayout->addWidget(pushButton_8);
+
+
+        gridLayout->addLayout(horizontalLayout, 2, 6, 1, 3);
+
+        checkSendHexBox = new QCheckBox(tab_3);
+        checkSendHexBox->setObjectName(QStringLiteral("checkSendHexBox"));
+
+        gridLayout->addWidget(checkSendHexBox, 3, 6, 1, 2);
+
+        checkRecHexBox = new QCheckBox(tab_3);
+        checkRecHexBox->setObjectName(QStringLiteral("checkRecHexBox"));
+
+        gridLayout->addWidget(checkRecHexBox, 3, 8, 1, 1);
+
+        verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
-        checkBox_first = new QCheckBox(verticalLayoutWidget_6);
+        checkBox_first = new QCheckBox(tab_3);
         checkBox_first->setObjectName(QStringLiteral("checkBox_first"));
         checkBox_first->setEnabled(true);
 
         verticalLayout_6->addWidget(checkBox_first);
 
-        checkBox_sencond = new QCheckBox(verticalLayoutWidget_6);
+        checkBox_sencond = new QCheckBox(tab_3);
         checkBox_sencond->setObjectName(QStringLiteral("checkBox_sencond"));
         checkBox_sencond->setEnabled(true);
 
         verticalLayout_6->addWidget(checkBox_sencond);
 
-        checkBox_third = new QCheckBox(verticalLayoutWidget_6);
+        checkBox_third = new QCheckBox(tab_3);
         checkBox_third->setObjectName(QStringLiteral("checkBox_third"));
         checkBox_third->setEnabled(true);
 
         verticalLayout_6->addWidget(checkBox_third);
 
-        checkBox_four = new QCheckBox(verticalLayoutWidget_6);
+        checkBox_four = new QCheckBox(tab_3);
         checkBox_four->setObjectName(QStringLiteral("checkBox_four"));
         checkBox_four->setEnabled(true);
 
         verticalLayout_6->addWidget(checkBox_four);
+
+
+        gridLayout->addLayout(verticalLayout_6, 4, 1, 6, 2);
+
+        serialSendWindow = new QPlainTextEdit(tab_3);
+        serialSendWindow->setObjectName(QStringLiteral("serialSendWindow"));
+
+        gridLayout->addWidget(serialSendWindow, 4, 6, 1, 3);
+
+        pushButton_9 = new QPushButton(tab_3);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+
+        gridLayout->addWidget(pushButton_9, 5, 6, 1, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        pushButton_11 = new QPushButton(tab_3);
+        pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
+
+        verticalLayout->addWidget(pushButton_11);
+
+        pushButton_10 = new QPushButton(tab_3);
+        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+
+        verticalLayout->addWidget(pushButton_10);
+
+
+        gridLayout->addLayout(verticalLayout, 5, 8, 1, 1);
+
+        textBrowser_3 = new QTextBrowser(tab_3);
+        textBrowser_3->setObjectName(QStringLiteral("textBrowser_3"));
+        textBrowser_3->setEnabled(true);
+
+        gridLayout->addWidget(textBrowser_3, 6, 0, 4, 1);
+
+        label_62 = new QLabel(tab_3);
+        label_62->setObjectName(QStringLiteral("label_62"));
+
+        gridLayout->addWidget(label_62, 6, 7, 1, 2);
+
+        label_60 = new QLabel(tab_3);
+        label_60->setObjectName(QStringLiteral("label_60"));
+
+        gridLayout->addWidget(label_60, 7, 3, 1, 2);
+
+        label_61 = new QLabel(tab_3);
+        label_61->setObjectName(QStringLiteral("label_61"));
+
+        gridLayout->addWidget(label_61, 7, 6, 1, 1);
+
+        dial_9 = new QDial(tab_3);
+        dial_9->setObjectName(QStringLiteral("dial_9"));
+
+        gridLayout->addWidget(dial_9, 7, 8, 2, 1);
+
+        label_58 = new QLabel(tab_3);
+        label_58->setObjectName(QStringLiteral("label_58"));
+
+        gridLayout->addWidget(label_58, 8, 3, 1, 2);
+
+        progressBar_3 = new QProgressBar(tab_3);
+        progressBar_3->setObjectName(QStringLiteral("progressBar_3"));
+        progressBar_3->setValue(24);
+
+        gridLayout->addWidget(progressBar_3, 8, 5, 1, 2);
+
+        label_59 = new QLabel(tab_3);
+        label_59->setObjectName(QStringLiteral("label_59"));
+
+        gridLayout->addWidget(label_59, 9, 3, 1, 2);
+
+        progressBar_4 = new QProgressBar(tab_3);
+        progressBar_4->setObjectName(QStringLiteral("progressBar_4"));
+        progressBar_4->setValue(24);
+
+        gridLayout->addWidget(progressBar_4, 9, 5, 1, 2);
+
+        lcdNumber_19 = new QLCDNumber(tab_3);
+        lcdNumber_19->setObjectName(QStringLiteral("lcdNumber_19"));
+
+        gridLayout->addWidget(lcdNumber_19, 9, 8, 1, 1);
+
+        label_14 = new QLabel(tab_3);
+        label_14->setObjectName(QStringLiteral("label_14"));
+
+        gridLayout->addWidget(label_14, 10, 0, 1, 1);
 
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
@@ -885,21 +913,95 @@ public:
         pushButton_25->setGeometry(QRect(1300, 450, 80, 51));
         pushButton_25->setStyleSheet(QStringLiteral("border-image: url(:/Image/icon/full_t.png);"));
         tabWidget->addTab(tab_6, QString());
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 780, 751, 131));
-        label_3->setStyleSheet(QStringLiteral("image: url(:/Image/more.png);"));
+
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, tabWidget);
+
         textBrowser_7 = new QTextBrowser(centralwidget);
         textBrowser_7->setObjectName(QStringLiteral("textBrowser_7"));
-        textBrowser_7->setGeometry(QRect(1230, 790, 491, 101));
+
+        formLayout_2->setWidget(4, QFormLayout::FieldRole, textBrowser_7);
+
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setStyleSheet(QStringLiteral("image: url(:/Image/more.png);"));
+
+        formLayout_2->setWidget(5, QFormLayout::FieldRole, label_3);
+
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         MainWindow->setStatusBar(statusbar);
+        QWidget::setTabOrder(textBrowser, textBrowser_2);
+        QWidget::setTabOrder(textBrowser_2, textBrowser_7);
+        QWidget::setTabOrder(textBrowser_7, verticalSlider_3);
+        QWidget::setTabOrder(verticalSlider_3, verticalSlider_4);
+        QWidget::setTabOrder(verticalSlider_4, verticalSlider_2);
+        QWidget::setTabOrder(verticalSlider_2, verticalSlider_5);
+        QWidget::setTabOrder(verticalSlider_5, dial_2);
+        QWidget::setTabOrder(dial_2, dial);
+        QWidget::setTabOrder(dial, dial_3);
+        QWidget::setTabOrder(dial_3, dial_4);
+        QWidget::setTabOrder(dial_4, pushButton_2);
+        QWidget::setTabOrder(pushButton_2, pushButton_6);
+        QWidget::setTabOrder(pushButton_6, radioButton_2);
+        QWidget::setTabOrder(radioButton_2, radioButton);
+        QWidget::setTabOrder(radioButton, radioButton_3);
+        QWidget::setTabOrder(radioButton_3, pushButton);
+        QWidget::setTabOrder(pushButton, pushButton_3);
+        QWidget::setTabOrder(pushButton_3, pushButton_4);
+        QWidget::setTabOrder(pushButton_4, comboBox);
+        QWidget::setTabOrder(comboBox, textEdit);
+        QWidget::setTabOrder(textEdit, textEdit_2);
+        QWidget::setTabOrder(textEdit_2, pushButton_5);
+        QWidget::setTabOrder(pushButton_5, textBrowser_3);
+        QWidget::setTabOrder(textBrowser_3, comboBox_7);
+        QWidget::setTabOrder(comboBox_7, comboBox_2);
+        QWidget::setTabOrder(comboBox_2, comboBox_3);
+        QWidget::setTabOrder(comboBox_3, comboBox_4);
+        QWidget::setTabOrder(comboBox_4, comboBox_5);
+        QWidget::setTabOrder(comboBox_5, comboBox_6);
+        QWidget::setTabOrder(comboBox_6, pushButton_7);
+        QWidget::setTabOrder(pushButton_7, pushButton_8);
+        QWidget::setTabOrder(pushButton_8, pushButton_9);
+        QWidget::setTabOrder(pushButton_9, pushButton_11);
+        QWidget::setTabOrder(pushButton_11, pushButton_10);
+        QWidget::setTabOrder(pushButton_10, serialSendWindow);
+        QWidget::setTabOrder(serialSendWindow, checkSendHexBox);
+        QWidget::setTabOrder(checkSendHexBox, checkRecHexBox);
+        QWidget::setTabOrder(checkRecHexBox, dial_9);
+        QWidget::setTabOrder(dial_9, checkBox_first);
+        QWidget::setTabOrder(checkBox_first, checkBox_sencond);
+        QWidget::setTabOrder(checkBox_sencond, checkBox_third);
+        QWidget::setTabOrder(checkBox_third, checkBox_four);
+        QWidget::setTabOrder(checkBox_four, dial_10);
+        QWidget::setTabOrder(dial_10, dial_11);
+        QWidget::setTabOrder(dial_11, treeView);
+        QWidget::setTabOrder(treeView, pushButton_12);
+        QWidget::setTabOrder(pushButton_12, pushButton_13);
+        QWidget::setTabOrder(pushButton_13, pushButton_14);
+        QWidget::setTabOrder(pushButton_14, pushButton_15);
+        QWidget::setTabOrder(pushButton_15, pushButton_16);
+        QWidget::setTabOrder(pushButton_16, lineEdit_3);
+        QWidget::setTabOrder(lineEdit_3, lineEdit_2);
+        QWidget::setTabOrder(lineEdit_2, lineEdit);
+        QWidget::setTabOrder(lineEdit, lineEdit_4);
+        QWidget::setTabOrder(lineEdit_4, lineEdit_5);
+        QWidget::setTabOrder(lineEdit_5, lineEdit_6);
+        QWidget::setTabOrder(lineEdit_6, lineEdit_7);
+        QWidget::setTabOrder(lineEdit_7, pushButton_17);
+        QWidget::setTabOrder(pushButton_17, textEdit_3);
+        QWidget::setTabOrder(textEdit_3, pushButton_18);
+        QWidget::setTabOrder(pushButton_18, pushButton_19);
+        QWidget::setTabOrder(pushButton_19, pushButton_20);
+        QWidget::setTabOrder(pushButton_20, pushButton_21);
+        QWidget::setTabOrder(pushButton_21, pushButton_22);
+        QWidget::setTabOrder(pushButton_22, pushButton_23);
+        QWidget::setTabOrder(pushButton_23, pushButton_24);
+        QWidget::setTabOrder(pushButton_24, pushButton_25);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -954,12 +1056,8 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-weight:600;\">\350\257\267\350\276\223\345\205\245Lincese</span></p></body></html>", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("MainWindow", "\347\241\256\350\256\244", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", " \350\256\276\347\275\256", Q_NULLPTR));
-        textBrowser_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun';\"><br /></p></body></html>", Q_NULLPTR));
-        label_14->setText(QApplication::translate("MainWindow", "   \344\270\262\345\217\243\350\260\203\350\257\225\344\277\241\346\201\257", Q_NULLPTR));
+        label_16->setText(QApplication::translate("MainWindow", "  \344\270\273 \350\200\263", Q_NULLPTR));
+        label_17->setText(QApplication::translate("MainWindow", "  \345\211\257\350\200\263", Q_NULLPTR));
         label_15->setText(QApplication::translate("MainWindow", "   \344\270\262\345\217\243\345\217\267", Q_NULLPTR));
         comboBox_7->clear();
         comboBox_7->insertItems(0, QStringList()
@@ -997,15 +1095,6 @@ public:
          << QApplication::translate("MainWindow", "\347\241\254\344\273\266", Q_NULLPTR)
          << QApplication::translate("MainWindow", "\346\227\240", Q_NULLPTR)
         );
-        pushButton_7->setText(QApplication::translate("MainWindow", "\346\211\223\345\274\200\344\270\262\345\217\243", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainWindow", " \346\220\234\345\257\273", Q_NULLPTR));
-        pushButton_9->setText(QApplication::translate("MainWindow", "  \345\217\221\351\200\201", Q_NULLPTR));
-        pushButton_11->setText(QApplication::translate("MainWindow", " \346\216\245\346\224\266\345\214\272\346\270\205\351\231\244", Q_NULLPTR));
-        pushButton_10->setText(QApplication::translate("MainWindow", "  \345\217\221\351\200\201\345\214\272\346\270\205\351\231\244", Q_NULLPTR));
-        checkSendHexBox->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201\345\215\201\345\205\255\350\277\233\345\210\266", Q_NULLPTR));
-        checkRecHexBox->setText(QApplication::translate("MainWindow", "\346\216\245\346\224\266\345\215\201\345\205\255\350\277\233\345\210\266", Q_NULLPTR));
-        label_16->setText(QApplication::translate("MainWindow", "  \344\270\273 \350\200\263", Q_NULLPTR));
-        label_17->setText(QApplication::translate("MainWindow", "  \345\211\257\350\200\263", Q_NULLPTR));
         label_19->setText(QApplication::translate("MainWindow", "\345\207\272\345\205\245\347\233\222\347\212\266\346\200\201:", Q_NULLPTR));
         label_18->setText(QApplication::translate("MainWindow", "\344\275\251\346\210\264\347\212\266\346\200\201:", Q_NULLPTR));
         label_20->setText(QApplication::translate("MainWindow", "TWS\347\212\266\346\200\201:", Q_NULLPTR));
@@ -1018,15 +1107,28 @@ public:
         label_27->setText(QApplication::translate("MainWindow", "off", Q_NULLPTR));
         label_28->setText(QApplication::translate("MainWindow", "off", Q_NULLPTR));
         label_29->setText(QApplication::translate("MainWindow", "off", Q_NULLPTR));
-        label_58->setText(QApplication::translate("MainWindow", "\344\270\273\350\200\263\347\224\265\346\261\240", Q_NULLPTR));
-        label_59->setText(QApplication::translate("MainWindow", "\345\211\257\350\200\263\347\224\265\346\261\240", Q_NULLPTR));
-        label_60->setText(QApplication::translate("MainWindow", " \345\216\213\346\204\237\346\223\215\344\275\234\357\274\232", Q_NULLPTR));
-        label_61->setText(QApplication::translate("MainWindow", "\346\227\240", Q_NULLPTR));
-        label_62->setText(QApplication::translate("MainWindow", "       \345\216\213\346\204\237\351\230\200\345\200\274", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("MainWindow", "\346\211\223\345\274\200\344\270\262\345\217\243", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("MainWindow", " \346\220\234\345\257\273", Q_NULLPTR));
+        checkSendHexBox->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201\345\215\201\345\205\255\350\277\233\345\210\266", Q_NULLPTR));
+        checkRecHexBox->setText(QApplication::translate("MainWindow", "\346\216\245\346\224\266\345\215\201\345\205\255\350\277\233\345\210\266", Q_NULLPTR));
         checkBox_first->setText(QApplication::translate("MainWindow", "   \350\275\264 \344\270\200", Q_NULLPTR));
         checkBox_sencond->setText(QApplication::translate("MainWindow", "   \350\275\264 \344\272\214", Q_NULLPTR));
         checkBox_third->setText(QApplication::translate("MainWindow", "   \350\275\264  \344\270\211", Q_NULLPTR));
         checkBox_four->setText(QApplication::translate("MainWindow", "   \350\275\264 \345\233\233", Q_NULLPTR));
+        pushButton_9->setText(QApplication::translate("MainWindow", "  \345\217\221\351\200\201", Q_NULLPTR));
+        pushButton_11->setText(QApplication::translate("MainWindow", " \346\216\245\346\224\266\345\214\272\346\270\205\351\231\244", Q_NULLPTR));
+        pushButton_10->setText(QApplication::translate("MainWindow", "  \345\217\221\351\200\201\345\214\272\346\270\205\351\231\244", Q_NULLPTR));
+        textBrowser_3->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'SimSun';\"><br /></p></body></html>", Q_NULLPTR));
+        label_62->setText(QApplication::translate("MainWindow", "       \345\216\213\346\204\237\351\230\200\345\200\274", Q_NULLPTR));
+        label_60->setText(QApplication::translate("MainWindow", " \345\216\213\346\204\237\346\223\215\344\275\234\357\274\232", Q_NULLPTR));
+        label_61->setText(QApplication::translate("MainWindow", "\346\227\240", Q_NULLPTR));
+        label_58->setText(QApplication::translate("MainWindow", "\344\270\273\350\200\263\347\224\265\346\261\240", Q_NULLPTR));
+        label_59->setText(QApplication::translate("MainWindow", "\345\211\257\350\200\263\347\224\265\346\261\240", Q_NULLPTR));
+        label_14->setText(QApplication::translate("MainWindow", "   \344\270\262\345\217\243\350\260\203\350\257\225\344\277\241\346\201\257", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "  \345\216\213\346\204\237", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QApplication::translate("MainWindow", " \347\224\237\344\272\247\346\214\207\346\240\207", Q_NULLPTR));
         pushButton_12->setText(QApplication::translate("MainWindow", "\344\272\247\346\265\213", Q_NULLPTR));

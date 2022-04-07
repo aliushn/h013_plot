@@ -1477,8 +1477,6 @@ MainWindow::~MainWindow()
     if(m_file!=nullptr){
         delete m_file;
     }
-
-
     delete ui;
 }
 void MainWindow::ThreadTxt(int value)

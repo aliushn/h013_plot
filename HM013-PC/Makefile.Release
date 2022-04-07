@@ -3275,51 +3275,7 @@ release/enterwindow.o: enterwindow.cpp enterwindow.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_enterwindow.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/QVariant \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qicon.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QApplication \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qapplication.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qcoreapplication.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qeventloop.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QLabel \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qlabel.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QPushButton \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QTextEdit \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtextedit.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextdocument.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextoption.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextcursor.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextformat.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qpen.h
+		ui_enterwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\enterwindow.o enterwindow.cpp
 
 release/fileprotocolparsehjw.o: fileprotocolparsehjw.cpp fileprotocolparsehjw.h \
@@ -5368,30 +5324,8 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		testmodule.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QDialog \
 		ui_mainwindow.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QApplication \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QCheckBox \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QComboBox \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QDial \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QFormLayout \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QHBoxLayout \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QLCDNumber \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QLabel \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QLineEdit \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QPlainTextEdit \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QProgressBar \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QPushButton \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QRadioButton \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QSlider \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QStatusBar \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QTabWidget \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QTextBrowser \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QTextEdit \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QTreeView \
-		glwidget.h \
 		waterprogressbar.h \
+		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QProgressBar \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/QColor \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/QtMath
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
@@ -5664,50 +5598,7 @@ release/testmodule.o: testmodule.cpp testmodule.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_testmodule.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/QVariant \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QAction \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qaction.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qicon.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QApplication \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qapplication.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qcoreapplication.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qeventloop.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qguiapplication.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QHeaderView \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qheaderview.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qvalidator.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QPushButton \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/QTextBrowser \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtextbrowser.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtWidgets/qtextedit.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextdocument.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextoption.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextcursor.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qtextformat.h \
-		C:/Qt6.2/5.9.9/mingw53_32/include/QtGui/qpen.h
+		ui_testmodule.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\testmodule.o testmodule.cpp
 
 release/xyseriesiodevice.o: xyseriesiodevice.cpp xyseriesiodevice.h \

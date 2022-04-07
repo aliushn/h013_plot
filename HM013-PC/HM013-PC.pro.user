@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 6.0.2, 2022-04-06T00:09:38. -->
+<!-- Written by QtCreator 6.0.2, 2022-04-07T23:30:41. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -259,8 +259,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/gitsdir/h013_plot/HM013-PC/HM013-PC.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/gitsdir/h013_plot/HM013-PC/HM013-PC.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HM013-PC2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Software/h013_plot/HM013-PC/HM013-PC.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Software/h013_plot/HM013-PC/HM013-PC.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
