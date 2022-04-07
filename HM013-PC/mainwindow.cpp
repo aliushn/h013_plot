@@ -739,17 +739,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dial_9->setNotchesVisible(true);
     ui->dial_9->setValue(80);
 
-    ui->dial_10->setMinimum(0);
-    ui->dial_10->setMaximum(255);
-    ui->dial_10->setNotchTarget(1);
-    ui->dial_10->setNotchesVisible(true);
-    ui->dial_10->setValue(80);
-
-    ui->dial_11->setMinimum(0);
-    ui->dial_11->setMaximum(255);
-    ui->dial_11->setNotchTarget(1);
-    ui->dial_11->setNotchesVisible(true);
-    ui->dial_11->setValue(80);
 
     ui->verticalSlider_2->setMinimum(0);
     ui->verticalSlider_2->setMaximum(100);
@@ -1513,11 +1502,11 @@ void MainWindow::on_dial_valueChanged(int value)
 }
 void MainWindow::CreateBlackImage(void)
 {
-    pAnimation = new QPropertyAnimation(ui->label_3, "geometry");
-    pAnimation->setDuration(1000);
+    //pAnimation = new QPropertyAnimation(ui->label_3, "geometry");
+    //pAnimation->setDuration(1000);
     //pAnimation->setStartValue(QRect(10, 540, 1081, 171));
     //pAnimation->setEndValue(QRect(500, 200, 75, 25));
-    pAnimation->setEasingCurve(QEasingCurve::SineCurve);
+    //pAnimation->setEasingCurve(QEasingCurve::SineCurve);
 }
 
 void MainWindow::on_pushButton_clicked()
