@@ -855,6 +855,22 @@ MainWindow::MainWindow(QWidget *parent)
     //创建单元测试
     //mtestNoudle=new TestModule;
     //mtestNoudle->setWindowTitle(tr("TesrModle"));
+#if 0//labe 圆弧
+
+    QGraphicsDropShadowEffect _effect;
+    _effect.setOffset(-6, -6);
+    _effect.setColor(Qt::gray);
+    _effect.setBlurRadius(30);
+    ui->label_58->setGraphicsEffect(&_effect);
+#endif
+    ui->tab->setStyleSheet("QTabWidget:pane {border-top:0px solid #e8f3f9;background:  transparent; }");
+    //背景透明
+    this->setAttribute(Qt::WA_TranslucentBackground);
+    //无边框
+    this->setWindowFlags(Qt::FramelessWindowHint);
+    ui->tab->setAttribute(Qt::WA_TranslucentBackground);
+    ui->tab->setWindowFlags(Qt::FramelessWindowHint);
+    ui->tab->setGeometry(0,0,1800,800);
 }
 
 

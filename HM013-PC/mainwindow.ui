@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1659</width>
-    <height>983</height>
+    <width>1750</width>
+    <height>1025</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -52,7 +52,7 @@
        <number>-3</number>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>0</number>
       </property>
       <property name="movable">
        <bool>false</bool>
@@ -1192,6 +1192,12 @@ p, li { white-space: pre-wrap; }
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="2" column="0">
          <widget class="QPushButton" name="pushButton_21">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-image: url(:/Image/air.png);</string>
           </property>
@@ -1200,66 +1206,28 @@ p, li { white-space: pre-wrap; }
           </property>
          </widget>
         </item>
-        <item row="0" column="1" rowspan="4">
-         <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,0,1">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_20">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/Image/air.png);</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="5">
+         <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="0,1,0,1">
           <property name="sizeConstraint">
            <enum>QLayout::SetMaximumSize</enum>
           </property>
           <item>
-           <widget class="GLWidget" name="openGLWidget">
-            <property name="styleSheet">
-             <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QWidget" name="widget_2" native="true">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton_20">
-          <property name="styleSheet">
-           <string notr="true">background-image: url(:/Image/air.png);</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0">
-         <layout class="QGridLayout" name="gridLayout_2">
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButton_18">
-            <property name="text">
-             <string>加速度</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_14">
             <item>
              <widget class="QPushButton" name="pushButton_22">
@@ -1303,10 +1271,49 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </item>
+          <item>
+           <widget class="GLWidget" name="openGLWidget">
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_2" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/Image/worldmap.jpg);</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item row="0" column="0">
          <widget class="QPushButton" name="pushButton_19">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-image: url(:/Image/air.png);</string>
           </property>

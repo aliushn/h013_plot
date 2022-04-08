@@ -14,7 +14,7 @@
 #include <QThread>
 #include <QTimer>
 #include <QTime>
-
+#include <QHeaderView>
 #include "qcustomplot.h"
 #include <QThreadPool>
 #include <QThread>

@@ -150,3 +150,60 @@ QToolBox::tab:selected { /* italicize selected tabs */
 QToolBox>QAbstractButton {
         min-height: 80px;
 }
+
+QTabBar::tab{
+        font: 75 12pt "Arial";		#设置字体
+        width:84px;					#设置宽度
+        height:30; 					#设置高度
+        margin-top:5px; 			#设置边距
+        margin-right:1px;
+        margin-left:1px;
+        margin-bottom:0px;
+}
+#最左边标签未选中时显示（因为需要左边打圆角，所以和其他背景图片不一样，注意字体颜色）
+QTabBar::tab:first:!selected {
+        color:#000000;
+        border-image: url(:/common/images/common/左_normal.png);
+}
+#最左边标签被选中
+QTabBar::tab:first:selected {
+        color:#FFFFFF;
+        border-image: url(:/common/images/common/左_pressed.png);
+}
+#最右边标签未选中时显示（因为需要右边打圆角，所以和其他背景图片不一样）
+QTabBar::tab:last:!selected {
+        color:#000000;
+        border-image: url(:/common/images/common/右_normal.png);
+}
+#最右边标签被选中
+QTabBar::tab:last:selected {
+        color:#FFFFFF;
+        border-image: url(:/common/images/common/右_pressed.png);
+}
+#中间的标签未被选择的显示
+QTabBar::tab:!selected {
+        color:#000000;
+        border-image: url(:/common/images/common/中_normal.png);
+}
+#中间标签选中显示的图片
+QTabBar::tab:selected {
+        color:#FFFFFF;
+        border-image: url(:/common/images/common/中_pressed.png);
+}
+
+QTabWidget::tab-bar {
+        alignment: center;
+}
+QTabBar::tab:hover{
+        background:rgb(255, 255, 255, 100);
+}
+QTabWidget::pane{
+        border:none;
+}
+QTabWidget::pane{     //  这里把panelRect画成无背景色无边框的
+    border: none;
+}
+QTabWidget QStackedWidget{   // 这里QStackedWidget背景设置成透明/其它颜色
+    background: transparent;
+}
+
